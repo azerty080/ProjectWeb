@@ -1,0 +1,75 @@
+a {
+	color: #000;
+}
+
+
+
+
+
+
+h1 {
+	color: #fff;
+	font-size: 70px;
+	margin: 100px 0px 20px 200px;
+}
+
+.logo {
+	width: 6em;
+	height: 6em;
+	margin-top: 40px;
+	z-index: 950;
+}
+
+
+.background {
+	position: absolute;
+	margin-top: -90px;
+	left: 0;
+	z-index: -1;
+	clip: rect(130px,2000px,500px,0px);
+	width: 100%;
+}
+
+
+
+
+
+
+.topnav {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-top: 20px;
+}
+
+.topnav a {
+	text-decoration: none;
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+}
+
+
+
+
+
+
+.botnav {
+	font-size: 22px;
+	text-align: center;
+	margin-top: 130px;
+}
+
+
+.botnav a {
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: block;
+}

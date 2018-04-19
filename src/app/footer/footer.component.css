@@ -1,0 +1,54 @@
+.mail {
+  background: #808080;
+  padding: 20px 100px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 20px 0px 0px;
+}
+
+
+.fa {
+  padding: 20px 20px;
+  font-size: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 20px 0px 0px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
+
+
+.contact {
+  float: left;
+  margin-right: 100px;
+}
+
+
+.contact p {
+  margin-bottom: 45px;
+}
