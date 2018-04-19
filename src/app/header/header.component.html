@@ -1,6 +1,11 @@
 <div class="topnav">
-	<a [routerLink]="['/login']">Inloggen</a>
-	<a href="">Aanmelden</a>
+	<div *ngIf="!authService.loggedIn() else isAuth">
+		<a [routerLink]="['/login']">Inloggen</a>
+		<a href="">Aanmelden</a>
+	</div>
+	<ng-template #isAuth>
+		<a (click)="logout()">Logout</a>
+	</ng-template>
 </div>
 
 
