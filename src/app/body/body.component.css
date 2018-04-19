@@ -16,6 +16,11 @@ p {
 }
 
 
+.left p {
+	margin-left: 20px;
+}
+
+
 .right {
 	margin-top: -30px;
 }
