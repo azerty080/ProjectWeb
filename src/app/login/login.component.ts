@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.authService.loggedIn());
   }
 
   createForm() {
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
 	}
 
   authenticateUser() {
-    this.authService.authenticateUser(this.loginForm.value).subscribe(v => console.log(v));
+    this.authService.authenticateUser(this.loginForm.value);
   }
 
 }
