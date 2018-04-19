@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
-// import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
@@ -36,6 +35,6 @@ export class AuthService {
     }
 
     loggedIn() {
-        // return tokenNotExpired('id_token');
+        // return tokenNotExpired('token');
     }
 }
