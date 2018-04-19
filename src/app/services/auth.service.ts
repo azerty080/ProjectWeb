@@ -32,9 +32,10 @@ export class AuthService {
 
     auth(res: any) {
         localStorage.setItem('token', res.token);
+        localStorage.setItem('user', res.user.username);
     }
 
     loggedIn() {
-        // return tokenNotExpired('token');
+        return localStorage.getItem('token') !== null && localStorage.getItem('user') !== null;
     }
 }
