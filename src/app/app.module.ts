@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { BodyComponent } from './body/body.component';
+import { HomeBodyComponent } from './home/home-body/home-body.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContactBodyComponent } from './contact/contact-body/contact-body.component';
 
 
 @NgModule({
@@ -21,9 +23,11 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BodyComponent,
+    HomeBodyComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent,
+    ContactBodyComponent
   ],
   imports: [
     BrowserModule,
