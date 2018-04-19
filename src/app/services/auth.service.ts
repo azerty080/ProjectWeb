@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { Router } from '@angular/router';
 // import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
@@ -8,50 +9,33 @@ export class AuthService {
   authToken: any;
   user: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-//   registerUser(user): any {
-//     let headers = new HttpHeaders();
-//     headers.append('Content-Type','application/json');
-//     return this.http.post('http://localhost:3000/users/register', user, { headers: headers })
-//       .map((res: Response) => res);
-//   }
+    authenticateUser(user): any {
+        let headers = new HttpHeaders();
+        headers.append('Content-Type','application/json');
+        
+        this.http.post('http://project.api/users/validate_login', JSON.stringify(user))
+            .subscribe((v: any) => {
+                this.auth(v);
+                this.router.navigate(['']);
+            },
+                (err: HttpErrorResponse) => {
+                    console.log(err)
+                    if (err.status === 404 || err.status === 403) {
+                        console.log('No user found for given credentials.');
+                    } else {
+                        console.log(`Oops. That login failed. Please try again.`);
+                    }
+                }
+            );
+    }
 
-  authenticateUser(user): any {
-    let headers = new HttpHeaders();
-    headers.append('Content-Type','application/json');
-    return this.http.post('http://project.api/users/validate_login', user, { headers: headers })
-      .map((res: Response) => res);
-  }
+    auth(res: any) {
+        localStorage.setItem('token', res.token);
+    }
 
-//   // getProfile() {
-//   //   let headers = new Headers();
-//   //   this.loadToken();
-//   //   headers.append('Authorization', this.authToken);
-//   //   headers.append('Content-Type','application/json');
-//   //   return this.http.get('http://localhost:3000/users/profile', { headers: headers })
-//   //     .map(res => res.json());
-//   // }
-
-//   // loadToken() {
-//   //   const token = localStorage.getItem('id_token');
-//   //   this.authToken = token;
-//   // }
-
-//   storeUserData(token, user) {
-//     localStorage.setItem('id_token', token);
-//     localStorage.setItem('user', JSON.stringify(user));
-//     this.authToken = token;
-//     this.user = user;
-//   }
-
-  loggedIn() {
-    // return tokenNotExpired('id_token');
-  }
-
-//   logout(){
-//     this.authToken = null;
-//     this.user = null;
-//     localStorage.removeItem('id_token');
-//   }
+    loggedIn() {
+        // return tokenNotExpired('id_token');
+    }
 }
