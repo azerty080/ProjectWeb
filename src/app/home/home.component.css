@@ -1,0 +1,20 @@
+.header {
+	font-family: "Arial";
+	margin: 20px 0px 20px 0px;
+}
+
+.body {
+	font-family: "Arial";
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px 0px 100px 0px;
+}
+
+.footer {
+	clear: both;
+	font-family: "Arial";
+	margin-top: 20px;
+	padding: 20px 0px 40px 50px;
+	background-color: #202020;
+	color: #fff;
+}
