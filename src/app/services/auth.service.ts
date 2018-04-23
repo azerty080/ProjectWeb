@@ -38,4 +38,10 @@ export class AuthService {
     loggedIn() {
         return localStorage.getItem('token') !== null && localStorage.getItem('user') !== null;
     }
+
+    logout() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.router.navigate(['']);
+    }
 }

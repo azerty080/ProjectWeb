@@ -1,22 +1,25 @@
-<div class="header">
-	<div class="topnav">
+<div class="topnav">
+	<div *ngIf="!authService.loggedIn() else isAuth">
 		<a [routerLink]="['/login']">Inloggen</a>
 		<a href="">Aanmelden</a>
 	</div>
+	<ng-template #isAuth>
+		<a (click)="logout()">Logout</a>
+	</ng-template>
+</div>
 
 
-	<div class="banner">
-		<img class="logo" src="assets/images/Logo_Antwerpen.jpg">
-		<img class="background" src="assets/images/banner.jpg">
-		<h1>Stop seksuele intimidatie</h1>
-	</div>
+<div class="banner">
+	<img class="logo" src="assets/images/Logo_Antwerpen.jpg">
+	<img class="background" src="assets/images/banner.jpg">
+	<h1>Stop seksuele intimidatie</h1>
+</div>
 
 
 
-	<div class="clearfix botnav">
-		<a [routerLink]="['/']">Wat is seksuele intimidatie?</a>
-		<a href="">Wat kan je zelf doen?</a>
-		<a href="">Stellingen</a>
-		<a [routerLink]="['/contact']">Contact</a>
-	</div>
+<div class="clearfix botnav">
+	<a [routerLink]="['/']">Wat is seksuele intimidatie?</a>
+	<a href="">Wat kan je zelf doen?</a>
+	<a href="">Stellingen</a>
+	<a [routerLink]="['/contact']">Contact</a>
 </div>
