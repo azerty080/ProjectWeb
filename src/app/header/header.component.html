@@ -1,20 +1,22 @@
-<div class="topnav">
-	<a [routerLink]="['/login']">Inloggen</a>
-	<a href="">Aanmelden</a>
-</div>
+<div class="header">
+	<div class="topnav">
+		<a [routerLink]="['/login']">Inloggen</a>
+		<a href="">Aanmelden</a>
+	</div>
 
 
-<div class="banner">
-	<img class="logo" src="assets/images/Logo_Antwerpen.jpg">
-	<img class="background" src="assets/images/banner.jpg">
-	<h1>Stop seksuele intimidatie</h1>
-</div>
+	<div class="banner">
+		<img class="logo" src="assets/images/Logo_Antwerpen.jpg">
+		<img class="background" src="assets/images/banner.jpg">
+		<h1>Stop seksuele intimidatie</h1>
+	</div>
 
 
 
-<div class="clearfix botnav">
-	<a href="">Wat is seksuele intimidatie?</a>
-	<a href="">Wat kan je zelf doen?</a>
-	<a href="">Stellingen</a>
-	<a href="/contact">Contact</a>
+	<div class="clearfix botnav">
+		<a [routerLink]="['/']">Wat is seksuele intimidatie?</a>
+		<a href="">Wat kan je zelf doen?</a>
+		<a href="">Stellingen</a>
+		<a [routerLink]="['/contact']">Contact</a>
+	</div>
 </div>

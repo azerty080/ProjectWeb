@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 body {
+	font-family: "Arial";
 	margin: 0;
+}
+
+h1 {
+	color: #CF0039;
+	font-size: 50px;
+}
+
+
+p {
+	font-size: 18px;
+}
+
+.body {
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px 0px 100px 0px;
 }
