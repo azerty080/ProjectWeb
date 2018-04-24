@@ -21,14 +21,14 @@ h1 {
 .logo {
 	width: 6em;
 	height: 6em;
-	margin-top: 40px;
+	margin-top: 59px;
 	z-index: 950;
 }
 
 
 .background {
 	position: absolute;
-	margin-top: -90px;
+	margin-top: -71px;
 	left: 0;
 	z-index: -1;
 	clip: rect(130px,2000px,500px,0px);
@@ -43,8 +43,7 @@ h1 {
 .topnav {
 	position: absolute;
 	right: 0;
-	top: 0;
-	margin-top: 20px;
+	top: 19px;
 }
 
 .topnav a {
@@ -63,6 +62,7 @@ h1 {
 	font-size: 22px;
 	text-align: center;
 	margin-top: 130px;
+	margin-bottom: 20px;
 }
 
 

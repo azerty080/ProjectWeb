@@ -1,7 +1,7 @@
 <div class="topnav">
 	<div *ngIf="!authService.loggedIn() else isAuth">
 		<a [routerLink]="['/login']">Inloggen</a>
-		<a href="">Aanmelden</a>
+		<a >Aanmelden</a>
 	</div>
 	<ng-template #isAuth>
 		<a (click)="logout()">Logout</a>
@@ -19,7 +19,7 @@
 
 <div class="clearfix botnav">
 	<a [routerLink]="['/']">Wat is seksuele intimidatie?</a>
-	<a href="">Wat kan je zelf doen?</a>
+	<a [routerLink]="['/wat-kan-je-zelf-doen']">Wat kan je zelf doen?</a>
 	<a href="">Stellingen</a>
 	<a [routerLink]="['/contact']">Contact</a>
 </div>

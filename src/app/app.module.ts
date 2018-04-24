@@ -16,7 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactBodyComponent } from './contact/contact-body/contact-body.component';
-
+import { ZelfDoenComponent } from './zelf-doen/zelf-doen.component';
+import { ZelfDoenBodyComponent } from './zelf-doen/zelf-doen-body/zelf-doen-body.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { ContactBodyComponent } from './contact/contact-body/contact-body.compon
     LoginComponent,
     HomeComponent,
     ContactComponent,
-    ContactBodyComponent
+    ContactBodyComponent,
+    ZelfDoenComponent,
+    ZelfDoenBodyComponent
   ],
   imports: [
     BrowserModule,
