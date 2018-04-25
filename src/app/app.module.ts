@@ -18,6 +18,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactBodyComponent } from './contact/contact-body/contact-body.component';
 import { ZelfDoenComponent } from './zelf-doen/zelf-doen.component';
 import { ZelfDoenBodyComponent } from './zelf-doen/zelf-doen-body/zelf-doen-body.component';
+import { StellingenComponent } from './stellingen/stellingen.component';
+import { StellingenBodyComponent } from './stellingen/stellingen-body/stellingen-body.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ZelfDoenBodyComponent } from './zelf-doen/zelf-doen-body/zelf-doen-body
     ContactComponent,
     ContactBodyComponent,
     ZelfDoenComponent,
-    ZelfDoenBodyComponent
+    ZelfDoenBodyComponent,
+    StellingenComponent,
+    StellingenBodyComponent
   ],
   imports: [
     BrowserModule,
