@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
+import { UserModule } from './user/user.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -42,7 +43,7 @@ import { auth } from './common/reducers/auth.reducer';
     ZelfDoenComponent,
     ZelfDoenBodyComponent,
     StellingenComponent,
-    StellingenBodyComponent
+    StellingenBodyComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +56,7 @@ import { auth } from './common/reducers/auth.reducer';
         auth: null,
       }
     }),
+    UserModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
