@@ -1,0 +1,12 @@
+.topnav {
+	position: absolute;
+	right: 0;
+	top: 19px;
+}
+
+.topnav a {
+	text-decoration: none;
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+}

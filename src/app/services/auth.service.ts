@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { State } from '../common/reducers';
-import { AuthGuard } from '../guards/auth.guard';
 
 
 @Injectable()
@@ -14,9 +13,10 @@ export class AuthService {
   user: any = { id: '', username: '' };
   authObj: Observable<any>;
 
-  constructor(private http: HttpClient, private router: Router, private store: Store<State>, private authGuard: AuthGuard) {
+  constructor(private http: HttpClient, private router: Router, private store: Store<State>) {
     this.authObj = store.select('auth');
     this.authObj.subscribe((v) => {
+      console.log(v);
       this.user = v;
     });
   }
@@ -28,7 +28,7 @@ export class AuthService {
         this.http.post('http://project.api/users/validate_login', JSON.stringify(user))
             .subscribe((v: any) => {
                 this.auth(v);
-                this.router.navigate(['']);
+                this.router.navigate(['user']);
             },
                 (err: HttpErrorResponse) => {
                     console.log(err)
@@ -42,13 +42,13 @@ export class AuthService {
     }
 
     auth(res: any) {
-        this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.username }});
+        this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email }});
         localStorage.setItem('token', res.token);
-        localStorage.setItem('user', res.user.username);
+        localStorage.setItem('user', res.user.email);
     }
 
     loggedIn() {
-      return this.user && this.user.id != undefined && this.user.username != undefined;
+      return localStorage.getItem('token') != undefined && localStorage.getItem('user') != undefined;
     }
 
     logout() {

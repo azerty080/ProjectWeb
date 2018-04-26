@@ -2,15 +2,9 @@
 	margin: 20px 0px 20px 0px;
 }
 
-
 a {
 	color: #000;
 }
-
-
-
-
-
 
 h1 {
 	color: #fff;
@@ -25,7 +19,6 @@ h1 {
 	z-index: 950;
 }
 
-
 .background {
 	position: absolute;
 	margin-top: -71px;
@@ -34,11 +27,6 @@ h1 {
 	clip: rect(130px,2000px,500px,0px);
 	width: 100%;
 }
-
-
-
-
-
 
 .topnav {
 	position: absolute;
@@ -53,11 +41,6 @@ h1 {
 	padding: 20px;
 }
 
-
-
-
-
-
 .botnav {
 	font-size: 22px;
 	text-align: center;
@@ -65,13 +48,10 @@ h1 {
 	margin-bottom: 20px;
 }
 
-
 .botnav a {
 	text-decoration: none;
 	margin-right: 20px;
 }
-
-
 
 .clearfix::after {
 	content: "";
