@@ -1,15 +1,13 @@
 .left {
-	float: left;
+	display: flex;
+	flex-flow: column;
 	margin-right: 100px;
-	padding-bottom: 800px;
 }
-
-
-.left p {
-	margin-left: 20px;
-}
-
 
 .right {
-	margin-top: -25px;
+	width: 40%;
+}
+
+a {
+	margin: 10px 0;
 }

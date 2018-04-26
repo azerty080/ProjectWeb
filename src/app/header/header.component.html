@@ -1,7 +1,8 @@
 <div class="topnav">
 	<div *ngIf="!authService.loggedIn() else isAuth">
-		<a [routerLink]="['/login']">Registreren</a>
-		<a [routerLink]="['/login']">Aanmelden</a>
+    <a><i class="fa fa-search" aria-hidden="true"></i></a>
+		<a [routerLink]="['/login']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a>
+		<a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
 	</div>
 	<ng-template #isAuth>
 		<a (click)="logout()">Logout</a>
@@ -17,7 +18,7 @@
 
 
 
-<div class="clearfix botnav">
+<div class="botnav">
 	<a [routerLink]="['/']">Wat is seksuele intimidatie?</a>
 	<a [routerLink]="['/wat-kan-je-zelf-doen']">Wat kan je zelf doen?</a>
 	<a [routerLink]="['/stellingen']">Stellingen</a>
