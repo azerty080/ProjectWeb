@@ -2,18 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import  { Observable } from 'rxjs/Observable';
+import { State } from '../common/reducers';
 
 @Injectable()
 export class AuthService {
   authToken: any;
   user: any;
+  authObj: Observable<any>;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private store: Store<State>) {
+    this.authObj = store.select('auth');
+    this.authObj.subscribe((v) => {
+      console.log(v);
+    });
+  }
 
     authenticateUser(user): any {
         let headers = new HttpHeaders();
         headers.append('Content-Type','application/json');
-        
+
         this.http.post('http://project.api/users/validate_login', JSON.stringify(user))
             .subscribe((v: any) => {
                 this.auth(v);
@@ -31,6 +40,7 @@ export class AuthService {
     }
 
     auth(res: any) {
+        this.store.dispatch({ type: 'CREATE_AUTH', payload: 'test'});
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', res.user.username);
     }
