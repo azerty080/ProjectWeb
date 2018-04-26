@@ -3,19 +3,21 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import  { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { State } from '../common/reducers';
+import { AuthGuard } from '../guards/auth.guard';
+
 
 @Injectable()
 export class AuthService {
   authToken: any;
-  user: any;
+  user: any = { id: '', username: '' };
   authObj: Observable<any>;
 
-  constructor(private http: HttpClient, private router: Router, private store: Store<State>) {
+  constructor(private http: HttpClient, private router: Router, private store: Store<State>, private authGuard: AuthGuard) {
     this.authObj = store.select('auth');
     this.authObj.subscribe((v) => {
-      console.log(v);
+      this.user = v;
     });
   }
 
@@ -40,16 +42,17 @@ export class AuthService {
     }
 
     auth(res: any) {
-        this.store.dispatch({ type: 'CREATE_AUTH', payload: 'test'});
+        this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.username }});
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', res.user.username);
     }
 
     loggedIn() {
-        return localStorage.getItem('token') !== null && localStorage.getItem('user') !== null;
+      return this.user && this.user.id != undefined && this.user.username != undefined;
     }
 
     logout() {
+        this.store.dispatch({ type: 'DELETE_AUTH', payload: '' });
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         this.router.navigate(['']);
