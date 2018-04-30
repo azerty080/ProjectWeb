@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
 
+import { CodeService } from '../services/code.service';
+
 const USER_ROUTES: Routes = [
 	{ path: '', component: UserComponent }
 ]
@@ -19,6 +21,7 @@ const USER_ROUTES: Routes = [
     UserComponent,
     UserHeaderComponent
   ],
-  exports: [ UserHeaderComponent ]
+  exports: [ UserHeaderComponent ],
+  providers: [ CodeService ]
 })
 export class UserModule { }

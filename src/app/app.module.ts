@@ -29,6 +29,8 @@ import { AuthGuard } from './guards/auth.guard';
 // reducers
 import { reducers } from './common/reducers/index';
 import { auth } from './common/reducers/auth.reducer';
+import { codes } from './common/reducers/codes.reducer';
+import { codesReady } from './common/reducers/codesReady.reducer';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { auth } from './common/reducers/auth.reducer';
     StoreModule.forRoot(reducers, {
       initialState: {
         auth: null,
+        codes: null,
+        codesReady: false,
       }
     }),
     UserModule

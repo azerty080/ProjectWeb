@@ -48,16 +48,5 @@ h1 {
 
 .botnav a {
 	text-decoration: none;
-<<<<<<< HEAD
-	margin-right: 20px;
-}
-
-.clearfix::after {
-	content: "";
-	clear: both;
-	display: block;
-}
-=======
 	margin: 0 20px;
 }
->>>>>>> master

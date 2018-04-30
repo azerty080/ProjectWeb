@@ -16,7 +16,6 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router, private store: Store<State>) {
     this.authObj = store.select('auth');
     this.authObj.subscribe((v) => {
-      console.log(v);
       this.user = v;
     });
   }
@@ -44,7 +43,7 @@ export class AuthService {
     auth(res: any) {
         this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email }});
         localStorage.setItem('token', res.token);
-        localStorage.setItem('user', res.user.email);
+        localStorage.setItem('user', JSON.stringify({ user: res.user.email, id: res.user.id }));
     }
 
     loggedIn() {
