@@ -30,7 +30,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { reducers } from './common/reducers/index';
 import { auth } from './common/reducers/auth.reducer';
 import { codes } from './common/reducers/codes.reducer';
-import { codesReady } from './common/reducers/codesReady.reducer';
 
 @NgModule({
   declarations: [
@@ -57,7 +56,6 @@ import { codesReady } from './common/reducers/codesReady.reducer';
       initialState: {
         auth: null,
         codes: null,
-        codesReady: false,
       }
     }),
     UserModule

@@ -15,12 +15,10 @@ export class UserComponent {
   codes: Array<any> = [];
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>) {
-    this.store.select('codesReady').filter((v) => v == true).subscribe((v) => {
-        this.getCodes();
-    });
+    store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v });
   }
 
-  getCodes() {
-    this.codes = this.codeService.codes;
+  addCode() {
+    this.codeService.addCode({key: 'newKey2', name: 'newKeyName2', id: this.authService.user.id});
   }
 }

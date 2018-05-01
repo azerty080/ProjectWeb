@@ -5,7 +5,8 @@ export function codes(state: any, action: Action) {
         case 'CREATE_CODES':
             return action.payload;
         case 'ADD_CODES':
-            return action.payload;
+            console.log([action.payload, ...state]);
+            return [action.payload, ...state];
         case 'DELETE_CODES':
             return null;
         default:

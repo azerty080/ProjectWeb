@@ -1,4 +1,4 @@
 <app-user-header></app-user-header>
 <div *ngFor="let code of codes">
-    <div>{{code.id}}</div>
+    <div (click)="addCode()">{{code.id}}</div>
 </div>
