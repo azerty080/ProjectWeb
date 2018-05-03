@@ -13,12 +13,21 @@ import { State } from '../common/reducers';
 })
 export class UserComponent {
   codes: Array<any> = [];
+  isAddingCode: boolean = false;
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>) {
     store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v });
   }
 
-  addCode() {
-    this.codeService.addCode({key: 'newKey2', name: 'newKeyName2', id: this.authService.user.id});
+  openModal() {
+    this.isAddingCode = true;
+  }
+
+  closeModal() {
+    this.isAddingCode = false;
+  }
+
+  deleteCode(id) {
+    this.codeService.deleteCode(id);
   }
 }

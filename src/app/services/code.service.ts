@@ -31,14 +31,25 @@ export class CodeService {
 
   addCode(code: any) {
     const token = localStorage.getItem('token');
-    this.http.post(`http://project.api/code`, code, {
+    return this.http.post(`http://project.api/code`, code, {
+			headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+		});
+  }
+
+  deleteCode(id: any) {
+    const token = localStorage.getItem('token');
+    this.http.delete(`http://project.api/code/${id}`, {
 			headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
 		}).subscribe((v: any) => {
-      this.codeInStore(v);
+      this.deleteCodeInStore(v);
     })
   }
 
-  codeInStore(code) {
+  addCodeInStore(code) {
     this.store.dispatch({ type: 'ADD_CODES', payload: code});
+  }
+
+  deleteCodeInStore(id) {
+    this.store.dispatch({ type: 'DELETE_CODE', payload: id});
   }
 }

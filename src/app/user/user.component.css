@@ -1,0 +1,44 @@
+table {
+  margin-top: 90px;
+  border-collapse: collapse;
+  width: 800px;
+}
+
+table > div {
+  text-align: center;
+  display:table-row;
+}
+
+th {
+  background-color: #CF0039;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.no-codes tbody {
+  text-align: center;
+}
+
+.no-codes td {
+  padding-bottom: 30px;
+}
+
+.no-codes tr:first-child td {
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+
+.add-code {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fa-times {
+  color: red;
+  cursor: pointer;
+}
+
+.delete-row {
+  text-align: center;
+}
