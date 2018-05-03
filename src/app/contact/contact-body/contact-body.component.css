@@ -2,3 +2,8 @@ div {
 	margin: 0 100px;
 	width: 40%;
 }
+
+.sensoa {
+	display: flex;
+	flex-flow: column;
+}

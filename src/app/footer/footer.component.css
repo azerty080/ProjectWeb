@@ -1,23 +1,25 @@
-.mail {
-  background: #808080;
-  padding: 20px 100px;
-  text-align: center;
-  text-decoration: none;
-  margin: 10px 20px 0px 0px;
+span {
+  margin-left: 10px;
+  font-size: 20px;
 }
-
 
 .fa {
   padding: 20px 20px;
   font-size: 20px;
   width: 20px;
-  text-align: center;
   text-decoration: none;
   margin: 10px 20px 0px 0px;
 }
 
 .fa:hover {
-    opacity: 0.7;
+  opacity: 0.7;
+}
+
+.fa-envelope-o {
+  width: 172px;
+  padding: 19px 20px 19px 20px;
+  background: #0064B4;
+  color: white;
 }
 
 .fa-facebook {
@@ -41,14 +43,25 @@
 }
 
 
-
-
 .contact {
-  float: left;
   margin-right: 100px;
 }
 
+.contact-icons {
+  display: flex;
+  align-items: center;
+}
 
-.contact p {
-  margin-bottom: 45px;
+.contact-icons a {
+  font-size: 22px;
+}
+
+.media-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.media-icons a {
+  display: flex;
+  justify-content: center;
 }

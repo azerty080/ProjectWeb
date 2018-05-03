@@ -16,10 +16,11 @@
 
 body {
 	font-family: "Arial";
+	font-size: 16px;
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, span {
   font-family: "Antwerpen","SunRegular","Helvetica Neue",Helvetica,Arial,Georgia,Sans-serif;
   font-weight: normal;
 }
@@ -29,14 +30,6 @@ h1 {
 	font-size: 50px;
 }
 
-h2 {
-
-}
-
-
-.left a, p {
-	font-size: 18px;
-}
 
 p {
   font-size: 1rem;
@@ -63,7 +56,7 @@ p.lead {
 app-footer {
 	display: flex;
 	justify-content: center;
-	align-items: baseline;
+	flex-direction: row;
 	background-color: #202020;
 	margin-top: 50px;
 	padding: 20px 0 30px 0;
