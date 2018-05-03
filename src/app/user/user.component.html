@@ -10,8 +10,8 @@
   <tbody>
     <tr *ngFor="let code of codes">
       <td>{{code.name}}</td>
-      <td>{{code.name}}</td>
-      <td>Delete</td>
+      <td>{{code.keyCode}}</td>
+      <td class="delete-row" (click)="deleteCode(code.id)"><span class="fa fa-times"></span></td>
     </tr>
   </tbody>
   <div class="add-code" (click)="openModal()">Code toevoegen</div>

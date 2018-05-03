@@ -26,4 +26,8 @@ export class UserComponent {
   closeModal() {
     this.isAddingCode = false;
   }
+
+  deleteCode(id) {
+    this.codeService.deleteCode(id);
+  }
 }

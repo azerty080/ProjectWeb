@@ -23,12 +23,14 @@ export class AddCodeModalComponent implements OnInit {
   createForm() {
 		this.addCodeForm = this.fb.group({
 			name: [''],
-      key: [''],
+      keyCode: [''],
 		})
   }
 
   addCode() {
-    this.codeService.addCode({name: this.addCodeForm.value.name, key: this.addCodeForm.value.key, id: this.authService.user.id});
+    this.codeService.addCode({name: this.addCodeForm.value.name, keyCode: this.addCodeForm.value.keyCode, id: this.authService.user.id})
+      .subscribe((v) => { this.codeService.addCodeInStore(v); this.closeModal();}
+    );
   }
 
   closeModal() {
