@@ -38,6 +38,27 @@ h2 {
 	font-size: 18px;
 }
 
+p {
+  font-size: 1rem;
+  line-height: 1.33em;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+p.lead {
+  font-weight: 700;
+}
+
+p a {
+  color: #0064B4;
+  text-decoration: underline;
+}
+
+p a:hover {
+  color: #003c6c;
+}
 
 app-footer {
 	display: flex;
