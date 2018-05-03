@@ -21,7 +21,7 @@ h1:hover {
 
 .background {
 	position: absolute;
-	margin-top: -82px;
+	margin-top: -83px;
 	left: 0;
 	z-index: -1;
 	clip: rect(130px,2000px,500px,0px);
@@ -30,15 +30,18 @@ h1:hover {
 
 @-moz-document url-prefix() {
   .background {
-    margin-top: -81px !important;
+    margin-top: -82px !important;
+  }
+
+  .topnav {
+  	top: 13px !important;
   }
 }
 
 .topnav {
 	position: absolute;
 	right: 0;
-	top: 0;
-  margin-top: 15px;
+	top: 15px;
 }
 
 .topnav a {
