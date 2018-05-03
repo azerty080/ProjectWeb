@@ -51,12 +51,12 @@ p.lead {
   font-weight: 700;
 }
 
-p a {
+.right a {
   color: #0064B4;
   text-decoration: underline;
 }
 
-p a:hover {
+.right a:hover {
   color: #003c6c;
 }
 
@@ -68,4 +68,8 @@ app-footer {
 	margin-top: 50px;
 	padding: 20px 0 30px 0;
 	color: #fff;
+}
+
+ul {
+  list-style: square;
 }
