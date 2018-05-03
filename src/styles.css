@@ -27,7 +27,8 @@ h1, h2, h3, h4, h5, h6, span {
 
 h1 {
 	color: #CF0039;
-	font-size: 50px;
+	font-size: 3rem;
+	margin: 1rem 0 0 0;
 }
 
 
