@@ -21,16 +21,32 @@ h1:hover {
 
 .background {
 	position: absolute;
-	margin-top: -82px;
+	margin-top: -83px;
 	left: 0;
 	z-index: -1;
 	clip: rect(130px,2000px,500px,0px);
 	width: 100%;
 }
 
+
+/* Werkt niet, oplossing gezocht
+@-moz-document url-prefix() {
+    @supports (margin-top: -80px) {
+        .background {
+			margin-top: -80px;
+		}
+
+		.topnav {
+			top: 13px;
+		}
+    }
+}
+*/
+
+
 .topnav {
 	position: absolute;
-	right: 3px;
+	right: 0px;
 	top: 15px;
 }
 
@@ -40,7 +56,7 @@ h1:hover {
 	padding: 15px 20px;
   background: #0064B4;
   border-right: 4px solid rgba(0,0,0,0.2);
-  margin: -3px;
+  margin-left: -6px;
   transition: background .25s ease-out;
 }
 
