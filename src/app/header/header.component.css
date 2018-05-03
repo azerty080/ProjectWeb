@@ -30,7 +30,7 @@ h1:hover {
 
 .topnav {
 	position: absolute;
-	right: 0;
+	right: 3px;
 	top: 15px;
 }
 
@@ -42,6 +42,10 @@ h1:hover {
   border-right: 4px solid rgba(0,0,0,0.2);
   margin: -3px;
   transition: background .25s ease-out;
+}
+
+.topnav a:last-child {
+  border-right-width: 2px;
 }
 
 .topnav a:hover {
