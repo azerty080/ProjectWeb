@@ -13,15 +13,23 @@
   font-style:normal;
 }
 
+@font-face{
+  font-family:"Sun Regular";
+  src:url("./assets/fonts/SunAntwerpen_500.eot");
+  src:url("./assets/fonts/SunAntwerpen_500.woff") format("woff");
+  font-weight:500;
+  font-style:normal;
+}
+
 
 body {
-	font-family: "Arial";
-	font-size: 16px;
+	font-family: "Sun Regular", "Arial", sans-serif;
+	font-size: 17px;
 	margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6, span {
-  font-family: "Antwerpen","SunRegular","Helvetica Neue",Helvetica,Arial,Georgia,Sans-serif;
+  font-family: "Antwerpen", "SunRegular", Arial, Sans-serif;
   font-weight: normal;
 }
 

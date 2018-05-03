@@ -21,7 +21,7 @@ h1:hover {
 
 .background {
 	position: absolute;
-	margin-top: -83px;
+	margin-top: -82px;
 	left: 0;
 	z-index: -1;
 	clip: rect(130px,2000px,500px,0px);
@@ -30,7 +30,7 @@ h1:hover {
 
 @-moz-document url-prefix() {
   .background {
-    margin-top: -82px !important;
+    margin-top: -85px !important;
   }
 
   .topnav {
@@ -51,6 +51,7 @@ h1:hover {
   background: #0064B4;
   border-right: 4px solid rgba(0,0,0,0.2);
   transition: background .25s ease-out;
+  font-weight: bold;
 }
 
 .topnav a:last-child {
