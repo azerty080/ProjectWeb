@@ -21,28 +21,18 @@ h1:hover {
 
 .background {
 	position: absolute;
-	margin-top: -83px;
+	margin-top: -82px;
 	left: 0;
 	z-index: -1;
 	clip: rect(130px,2000px,500px,0px);
 	width: 100%;
 }
 
-
-/* Werkt niet, oplossing gezocht
 @-moz-document url-prefix() {
-    @supports (margin-top: -80px) {
-        .background {
-			margin-top: -80px;
-		}
-
-		.topnav {
-			top: 13px;
-		}
-    }
+  .background {
+    margin-top: -81px !important;
+  }
 }
-*/
-
 
 .topnav {
 	position: absolute;
