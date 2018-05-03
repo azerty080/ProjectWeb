@@ -41,6 +41,11 @@ h1:hover {
   background: #0064B4;
   border-right: 4px solid rgba(0,0,0,0.2);
   margin: -3px;
+  transition: background .25s ease-out;
+}
+
+.topnav a:hover {
+  background: #003f72;
 }
 
 .botnav {
