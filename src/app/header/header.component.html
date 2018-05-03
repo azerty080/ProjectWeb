@@ -19,8 +19,10 @@
 
 
 <div class="botnav">
-	<a [routerLink]="['/']">Wat is seksuele intimidatie?</a>
-	<a [routerLink]="['/wat-kan-je-zelf-doen']">Wat kan je zelf doen?</a>
-	<a [routerLink]="['/stellingen']">Stellingen</a>
-	<a [routerLink]="['/contact']">Contact</a>
+  <ul>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a [routerLink]="['/']">Wat is seksuele intimidatie?</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/wat-kan-je-zelf-doen']">Wat kan je zelf doen?</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/stellingen']">Stellingen</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
+  </ul>
 </div>
