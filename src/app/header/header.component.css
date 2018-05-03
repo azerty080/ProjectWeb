@@ -5,7 +5,11 @@ a {
 h1 {
 	color: #fff;
 	font-size: 70px;
-	margin: 100px 0px 20px 200px;
+	margin: 100px 0 20px 200px;
+}
+
+h1:hover {
+  color: #0064B4;
 }
 
 .logo {
