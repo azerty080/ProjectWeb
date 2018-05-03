@@ -14,8 +14,8 @@ const appRoutes: Routes = [
 	{ path: 'login', component: LoginComponent, pathMatch: 'full' },
 	{ path: 'wat-kan-je-zelf-doen', component: ZelfDoenComponent, pathMatch: 'full' },
 	{ path: 'stellingen', component: StellingenComponent, pathMatch: 'full' },
-  { path: 'contact', component: ContactComponent, pathMatch: 'full' },
-  { path: 'user', loadChildren: './user/user.module#UserModule', canActivate: [AuthGuard] },
+  	{ path: 'contact', component: ContactComponent, pathMatch: 'full' },
+  	{ path: 'user', loadChildren: './user/user.module#UserModule', canActivate: [AuthGuard] },
 
 	// { path: '**', component: PageNotFoundComponent }
 ]

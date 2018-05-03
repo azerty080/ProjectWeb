@@ -1,28 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 body {
 	font-family: "Arial";
+	font-size: 16px;
 	margin: 0;
 }
 
 h1 {
 	color: #CF0039;
 	font-size: 50px;
-}
-
-h2 {
-	
+	margin-top: 50px;
 }
 
 
-.left a, p {
-	font-size: 18px;
+span {
+  	font-family: "Arial";
 }
 
 
 app-footer {
 	display: flex;
 	justify-content: center;
-	align-items: baseline;
+	flex-direction: row;
 	background-color: #202020;
 	margin-top: 50px;
 	padding: 20px 0 30px 0;
