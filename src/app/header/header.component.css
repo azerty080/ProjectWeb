@@ -30,7 +30,7 @@ h1:hover {
 
 @-moz-document url-prefix() {
   .background {
-    margin-top: -85px !important;
+    margin-top: -82px !important;
   }
 
   .topnav {
