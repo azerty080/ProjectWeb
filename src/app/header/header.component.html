@@ -1,8 +1,8 @@
 <div class="topnav">
 	<div *ngIf="!authService.loggedIn() else isAuth">
-    <a><i class="fa fa-search" aria-hidden="true"></i></a>
-		<a [routerLink]="['/login']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a>
-		<a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
+    <a><i class="fa fa-search" aria-hidden="true"></i></a><!--
+ --><a [routerLink]="['/login']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a><!--
+ --><a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
 	</div>
 	<ng-template #isAuth>
 		<a (click)="logout()">Logout</a>
