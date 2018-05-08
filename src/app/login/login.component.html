@@ -1,12 +1,14 @@
-<div>
-  <h4>Aanmelden met uw A-profiel</h4>
-  <p>Met een A-profiel krijgt u nieuws op maat, hoeft u niet steeds dezelfde gegevens in te vullen bij een aanvraag en kan u reageren op artikels en meepraten in de babbelbox.</p>
-</div>
+<div class="login-container">
+  <div>
+    <h4>Aanmelden met uw A-profiel</h4>
+    <p>Met een A-profiel krijgt u nieuws op maat, hoeft u niet steeds dezelfde gegevens in te vullen bij een aanvraag en kan u reageren op artikels en meepraten in de babbelbox.</p>
+  </div>
 
-<div>
-  <form [formGroup]="loginForm">
-    <input type="text" id="email" placeholder="Vul hier uw gebruikersnaam in" formControlName="email">
-    <input type="password" id="password" placeholder="Vul hier uw wachtwoord in" formControlName="password">
-    <div class="button" (click)="authenticateUser()"><span class="fa fa-user"></span> Aanmelden</div>
-  </form>
+  <div>
+    <form [formGroup]="loginForm">
+      <input type="text" id="email" placeholder="Vul hier uw gebruikersnaam in" formControlName="email">
+      <input type="password" id="password" placeholder="Vul hier uw wachtwoord in" formControlName="password">
+      <div class="button" (click)="authenticateUser()"><span class="fa fa-user"></span> Aanmelden</div>
+    </form>
+  </div>
 </div>
