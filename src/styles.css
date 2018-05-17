@@ -83,3 +83,10 @@ iframe {
 	height: 427px;
 	border-style: none;
 }
+
+.logo {
+	width: 6em;
+	height: 6em;
+	margin-top: 48px;
+	z-index: 950;
+}

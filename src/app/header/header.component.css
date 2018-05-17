@@ -12,13 +12,6 @@ h1:hover {
   color: #0064B4;
 }
 
-.logo {
-	width: 6em;
-	height: 6em;
-	margin-top: 48px;
-	z-index: 950;
-}
-
 .background {
 	position: absolute;
 	margin-top: -82px;
