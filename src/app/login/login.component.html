@@ -5,16 +5,33 @@
 </div>
 
 <div class="login-container">
-  <div>
-    <h4>Aanmelden met uw A-profiel</h4>
+  <div class="login-logo">
+    <img class="logo" src="assets/images/Logo_Antwerpen.jpg">
+    
+  </div>
+
+  <div class="login-info">
+    <h2>Aanmelden met uw A-profiel</h2>
     <p>Met een A-profiel krijgt u nieuws op maat, hoeft u niet steeds dezelfde gegevens in te vullen bij een aanvraag en kan u reageren op artikels en meepraten in de babbelbox.</p>
   </div>
 
-  <div>
+  <div class="login-right">
     <form [formGroup]="loginForm">
       <input type="text" id="email" placeholder="Vul hier uw gebruikersnaam in" formControlName="email">
+      <a [routerLink]="['/']">Gebruikersnaam vergeten?</a>
       <input type="password" id="password" placeholder="Vul hier uw wachtwoord in" formControlName="password">
+      <a [routerLink]="['/']">Wachtwoord vergeten?</a>
       <div class="button" (click)="authenticateUser()"><span class="fa fa-user"></span> Aanmelden</div>
     </form>
+
+    <p>Nog geen A-profiel? <a [routerLink]="['/register']">Registreer uw A-profiel</a></p>
+
+    <p class="lead topborder">Met uw A-profiel kunt u aanmelden op deze websites:</p>
+
+    <p class="lead">
+      <a href="http://www.visitantwerpen.be/">visitantwerpen.be</a>
+      <a href="https://www.gate15.be/nl/home">gate15.be</a>
+      <a href="https://www.slimnaarantwerpen.be/nl">slimnaarantwerpen.be</a>
+    </p>
   </div>
 </div>

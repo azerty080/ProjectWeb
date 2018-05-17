@@ -3,8 +3,8 @@
     line-height: 1.4em;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: .771rem;
-    padding-bottom: .771rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     transition: background .25s ease-out;
     -moz-transition: background .25s ease-out;
     -webkit-transition: background .25s ease-out;
@@ -23,7 +23,7 @@
     align-items: center;
     font-weight: 700;
     min-height: 3rem;
-    width: 100%;
+    width: 10%;
     margin-bottom: .75rem;
     margin-top: 0;
     outline: none;
@@ -41,22 +41,56 @@
   margin-right: 5px;
 }
 
+.logo {
+  margin: 0;
+}
+
 .login-container {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-top: 48px;
+  border-top: 1px solid rgba(127,127,127,0.3);
+}
+
+.login-logo {
+  width: 14%;
+}
+
+.login-info {
+  width: 21%;
+  margin-right: 2em;
+}
+
+.login-right {
+  width: 65%;
+  height: 748px;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  background: #F3F3F5;
+  padding: 4.55rem 1.5rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+form a {
+  font-size: 14px;
+  margin-bottom: 2em;
+}
+
+h2 {
+  margin-top: 0;
 }
 
 input {
+  width: 75%;
   height: 30px;
-  padding: 0 5px;
-  margin-bottom: 15px;
+  padding: .5rem 1rem;
+  margin-bottom: .5em;
 }
 
 @-moz-document url-prefix() {
@@ -91,4 +125,15 @@ input {
 
 .topnav a:hover {
   background: #003f72;
+}
+
+.lead a {
+  margin-right: 0.75rem;
+}
+
+.topborder {
+  width: 78%;
+  border-top: 1px solid rgba(127,127,127,0.3);
+  padding-top: 10px;
+  margin-top: 50px;
 }

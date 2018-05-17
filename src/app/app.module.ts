@@ -30,6 +30,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { reducers } from './common/reducers/index';
 import { auth } from './common/reducers/auth.reducer';
 import { codes } from './common/reducers/codes.reducer';
+import { userNavigation} from './common/reducers/user-navigation.reducer';
+
 import { RegisterComponent } from './register/register.component';
 import {SeksueleIntimidatieComponent} from './home/home-body/seksuele-intimidatie/seksuele-intimidatie.component';
 import {StrafbaarComponent} from './home/home-body/strafbaar/strafbaar.component';
@@ -70,6 +72,7 @@ import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.compon
       initialState: {
         auth: null,
         codes: null,
+        userNavigation: 'details'
       }
     }),
     UserModule

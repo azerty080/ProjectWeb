@@ -9,6 +9,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 
 import { CodeService } from '../services/code.service';
 import { AddCodeModalComponent } from './add-code-modal/add-code-modal.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 const USER_ROUTES: Routes = [
 	{ path: '', component: UserComponent }
@@ -24,7 +25,8 @@ const USER_ROUTES: Routes = [
   declarations: [
     UserComponent,
     UserHeaderComponent,
-    AddCodeModalComponent
+    AddCodeModalComponent,
+    UserDetailsComponent
   ],
   exports: [ UserHeaderComponent ],
   providers: [ CodeService ]
