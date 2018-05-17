@@ -24,7 +24,7 @@ const appRoutes: Routes = [
 	{ path: 'wat-is-seksuele-intimidatie/hoe-kan-ik-aangifte-doen', component: HomeComponent, pathMatch: 'full', children: [{path: '', component: AangifteComponent, outlet: 'content'}] },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
-	{ path: 'wat-kan-je-zelf-doen', component: ZelfDoenComponent, pathMatch: 'full' },
+	{ path: 'wat-kan-je-zelf-doen', redirectTo: 'wat-kan-je-zelf-doen/als-slachtoffer', pathMatch: 'full' },
 	{ path: 'wat-kan-je-zelf-doen/als-slachtoffer', component: ZelfDoenComponent, pathMatch: 'full', children: [{path: '', component: SlachtofferComponent, outlet: 'content'}] },
 	{ path: 'wat-kan-je-zelf-doen/als-getuige', component: ZelfDoenComponent, pathMatch: 'full', children: [{path: '', component: GetuigeComponent, outlet: 'content'}] },
 	{ path: 'wat-kan-je-zelf-doen/als-pleger', component: ZelfDoenComponent, pathMatch: 'full', children: [{path: '', component: PlegerComponent, outlet: 'content'}] },
