@@ -34,6 +34,9 @@ import { RegisterComponent } from './register/register.component';
 import {SeksueleIntimidatieComponent} from './home/home-body/seksuele-intimidatie/seksuele-intimidatie.component';
 import {StrafbaarComponent} from './home/home-body/strafbaar/strafbaar.component';
 import { AangifteComponent } from './home/home-body/aangifte/aangifte.component';
+import { SlachtofferComponent } from './zelf-doen/zelf-doen-body/slachtoffer/slachtoffer.component';
+import { GetuigeComponent } from './zelf-doen/zelf-doen-body/getuige/getuige.component';
+import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { AangifteComponent } from './home/home-body/aangifte/aangifte.component'
     SeksueleIntimidatieComponent,
     StrafbaarComponent,
     AangifteComponent,
+    SlachtofferComponent,
+    GetuigeComponent,
+    PlegerComponent,
   ],
   imports: [
     BrowserModule,
