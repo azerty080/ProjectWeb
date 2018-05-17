@@ -7,37 +7,37 @@
     <a (click)="setPage('codes')">Codes <i class="fa fa-chevron-right"></i></a>
   </div>
 
-  <app-user-details *ngIf="page == 'details'"></app-user-details>
+  <div class="feed-container">
+    <app-user-details *ngIf="page == 'details'"></app-user-details>
+
+    <table class="codes" *ngIf="page == 'codes' && codes.length > 0">
+      <thead>
+        <th>Name</th>
+        <th>Key code</th>
+        <th class="delete-row">Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let code of codes">
+          <td>{{code.name}}</td>
+          <td>{{code.keyCode}}</td>
+          <td class="delete-row" (click)="deleteCode(code.id)"><span class="fa fa-times"></span></td>
+        </tr>
+      </tbody>
+      <div class="add-code" (click)="openModal()">Code toevoegen</div>
+    </table>
+
+      <table class="no-codes" *ngIf="page == 'codes' && codes.length < 1">
+        <thead>
+          <th>Codes</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Geen codes gevonden</td>
+          </tr>
+          <tr>
+            <td><div class="add-code" (click)="openModal()">Code toevoegen?</div></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
 </main>
-
-<table class="codes" *ngIf="page == 'codes' && codes.length > 0">
-  <thead>
-    <th>Name</th>
-    <th>Key code</th>
-    <th>Delete</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let code of codes">
-      <td>{{code.name}}</td>
-      <td>{{code.keyCode}}</td>
-      <td class="delete-row" (click)="deleteCode(code.id)"><span class="fa fa-times"></span></td>
-    </tr>
-  </tbody>
-  <div class="add-code" (click)="openModal()">Code toevoegen</div>
-</table>
-
-<!-- <ng-template #noCodesTable>
-  <table class="no-codes">
-    <thead>
-      <th>Codes</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Geen codes gevonden</td>
-      </tr>
-      <tr>
-        <td><div class="add-code" (click)="openModal()">Code toevoegen?</div></td>
-      </tr>
-    </tbody>
-  </table>
-</ng-template> -->
