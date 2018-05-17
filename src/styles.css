@@ -78,6 +78,20 @@ app-footer {
 	color: #fff;
 }
 
+
+iframe {
+	width: 760px;
+	height: 427px;
+	border-style: none;
+}
+
+.logo {
+	width: 6em;
+	height: 6em;
+	margin-top: 48px;
+	z-index: 950;
+}
+
 @-moz-document url-prefix() {
   .background {
     margin-top: -82px !important;
@@ -176,4 +190,3 @@ a {
 h2 {
   margin-top: .5rem;
 }
-
