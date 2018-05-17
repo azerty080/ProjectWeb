@@ -4,13 +4,17 @@
   </div>
 </div>
 
-<div class="login-container">
-  <div>
-    <h4>Registreer uw A-profiel</h4>
+<div class="register-container">
+  <div class="register-logo">
+    <img class="logo" src="assets/images/Logo_Antwerpen.jpg">
+  </div>
+
+  <div class="register-info">
+    <h2>Registreer uw A-profiel</h2>
     <p>Met een A-profiel krijgt u nieuws op maat, hoeft u niet steeds dezelfde gegevens in te vullen bij een aanvraag en kan u reageren op artikels en meepraten in de babbelbox.</p>
   </div>
 
-  <div>
+  <div class="register-form">
     <form [formGroup]="registerForm">
       <input type="text" id="firsname" placeholder="Voornaam" formControlName="firstname">
       <input type="text" id="lastname" placeholder="Achternaam" formControlName="lastname">
@@ -19,5 +23,13 @@
       <input type="password" id="password" placeholder="Vul hier uw wachtwoord in" formControlName="password">
       <div class="button" (click)="register()"><span class="fa fa-user"></span> Registreren</div>
     </form>
+
+    <p class="lead topborder">Met uw A-profiel kunt u aanmelden op deze websites:</p>
+
+    <p class="lead">
+      <a href="http://www.visitantwerpen.be/">visitantwerpen.be</a>
+      <a href="https://www.gate15.be/nl/home">gate15.be</a>
+      <a href="https://www.slimnaarantwerpen.be/nl">slimnaarantwerpen.be</a>
+    </p>
   </div>
 </div>

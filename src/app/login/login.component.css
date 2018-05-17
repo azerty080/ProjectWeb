@@ -63,7 +63,7 @@
   margin-right: 2em;
 }
 
-.login-right {
+.login-form {
   width: 65%;
   min-height: calc(100vh - 9.10rem - 50px);
   display: flex;
