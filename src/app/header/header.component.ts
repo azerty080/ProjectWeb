@@ -8,25 +8,28 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements AfterViewInit {
 
+  searchBar: HTMLElement;
+
   constructor(private authService: AuthService) {
   }
 
   ngAfterViewInit() {
     const searchButton = document.getElementById('searchButton');
-    const searchBar = document.getElementById('searchBar');
-
+    this.searchBar = document.getElementById('searchBar');
+    console.log(this.searchBar);
     searchButton.addEventListener('click', this.toggleSearchBar);
   }
   toggleSearchBar(e) {
-    if (searchBar.style.width === '') {
-      searchBar.style.width = '230px';
-      searchBar.style.paddingLeft =  '10px';
-      searchBar.style.paddingRight =  '10px';
-      searchBar.focus();
+    this.searchBar = document.getElementById('searchBar');
+    if (this.searchBar.style.width === '') {
+      this.searchBar.style.width = '230px';
+      this.searchBar.style.paddingLeft =  '10px';
+      this.searchBar.style.paddingRight =  '10px';
+      this.searchBar.focus();
     }
     else {
-      searchBar.style.width = '';
-      searchBar.style.padding =  '';
+      this.searchBar.style.width = '';
+      this.searchBar.style.padding =  '';
     }
   }
 
