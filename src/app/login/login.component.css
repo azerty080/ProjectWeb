@@ -65,7 +65,7 @@
 
 .login-right {
   width: 65%;
-  height: 748px;
+  min-height: calc(100vh - 9.10rem - 50px);
   display: flex;
   flex-direction: column;
   background: #F3F3F5;
