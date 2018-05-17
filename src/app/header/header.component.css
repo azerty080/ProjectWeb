@@ -74,25 +74,18 @@ h1:hover {
   border-bottom: 1px solid rgba(127,127,127,0.3);
 }
 
-.botnav ul {
-  margin: 0;
-  padding: 0;
-}
-
-.botnav li {
+.botnav a {
   display: table-cell;
   margin: 0;
-  padding: 15px;
+  padding: 15px 15px 18px 15px;
 }
 
 .botnav a {
 	text-decoration: none;
 }
 
-.botnav li:hover a {
+.botnav a:hover, .botnav a.active{
   color: #0064B4;
-}
-
-.botnav li:hover, .botnav li.active{
   border-bottom: 3px solid #0064B4;
+  padding: 15px;
 }
