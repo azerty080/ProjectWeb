@@ -1,7 +1,6 @@
 table {
-  margin-top: 90px;
   border-collapse: collapse;
-  width: 800px;
+  width: 600px;
 }
 
 table > div {
@@ -13,6 +12,7 @@ th {
   background-color: #CF0039;
   color: #fff;
   padding: 10px 0;
+  width: 80px;
 }
 
 .no-codes tbody {
@@ -41,6 +41,7 @@ th {
 
 .delete-row {
   text-align: center;
+  width: 20px;
 }
 
 main {
@@ -85,4 +86,8 @@ main {
 .sidebar a:hover i {
   font-size: 1rem;
   margin: 0 3px;
+}
+
+.feed-container {
+  width: 40%;
 }
