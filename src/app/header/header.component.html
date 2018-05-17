@@ -5,7 +5,8 @@
  --><a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
 	</div>
 	<ng-template #isAuth>
-		<a (click)="logout()">Logout</a>
+    <a [routerLink]="['/user']"><i class="fa fa-user" aria-hidden="true"></i> User</a><!--
+ --><a (click)="logout()">Logout</a>
 	</ng-template>
 </div>
 
