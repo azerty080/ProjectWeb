@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,28 +8,24 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements AfterViewInit {
 
-  searchBar: HTMLElement;
+  @ViewChild('searchBar') searchBar: ElementRef;
 
   constructor(private authService: AuthService) {
   }
 
   ngAfterViewInit() {
-    const searchButton = document.getElementById('searchButton');
-    this.searchBar = document.getElementById('searchBar');
-    console.log(this.searchBar);
-    searchButton.addEventListener('click', this.toggleSearchBar);
   }
-  toggleSearchBar(e) {
-    this.searchBar = document.getElementById('searchBar');
-    if (this.searchBar.style.width === '') {
-      this.searchBar.style.width = '230px';
-      this.searchBar.style.paddingLeft =  '10px';
-      this.searchBar.style.paddingRight =  '10px';
-      this.searchBar.focus();
+
+  toggleSearchBar() {
+    if (this.searchBar.nativeElement.style.width === '') {
+      this.searchBar.nativeElement.style.width = '230px';
+      this.searchBar.nativeElement.style.paddingLeft =  '10px';
+      this.searchBar.nativeElement.style.paddingRight =  '10px';
+      this.searchBar.nativeElement.focus();
     }
     else {
-      this.searchBar.style.width = '';
-      this.searchBar.style.padding =  '';
+      this.searchBar.nativeElement.style.width = '';
+      this.searchBar.nativeElement.style.padding =  '';
     }
   }
 
