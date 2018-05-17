@@ -31,6 +31,9 @@ import { reducers } from './common/reducers/index';
 import { auth } from './common/reducers/auth.reducer';
 import { codes } from './common/reducers/codes.reducer';
 import { RegisterComponent } from './register/register.component';
+import {SeksueleIntimidatieComponent} from './home/home-body/seksuele-intimidatie/seksuele-intimidatie.component';
+import {StrafbaarComponent} from './home/home-body/strafbaar/strafbaar.component';
+import { AangifteComponent } from './home/home-body/aangifte/aangifte.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { RegisterComponent } from './register/register.component';
     StellingenComponent,
     StellingenBodyComponent,
     RegisterComponent,
+    SeksueleIntimidatieComponent,
+    StrafbaarComponent,
+    AangifteComponent,
   ],
   imports: [
     BrowserModule,
