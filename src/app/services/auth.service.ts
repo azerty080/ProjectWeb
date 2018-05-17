@@ -41,8 +41,7 @@ export class AuthService {
     }
 
     auth(res: any) {
-        console.log(res);
-        this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email }});
+        this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email, firstname: res.user.firstname, lastname: res.user.lastname, school: res.user.school }});
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify({ user: res.user.email, id: res.user.id }));
     }
