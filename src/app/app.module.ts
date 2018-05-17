@@ -30,7 +30,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { reducers } from './common/reducers/index';
 import { auth } from './common/reducers/auth.reducer';
 import { codes } from './common/reducers/codes.reducer';
+import { userNavigation} from './common/reducers/user-navigation.reducer';
+
 import { RegisterComponent } from './register/register.component';
+import {SeksueleIntimidatieComponent} from './home/home-body/seksuele-intimidatie/seksuele-intimidatie.component';
+import {StrafbaarComponent} from './home/home-body/strafbaar/strafbaar.component';
+import { AangifteComponent } from './home/home-body/aangifte/aangifte.component';
+import { SlachtofferComponent } from './zelf-doen/zelf-doen-body/slachtoffer/slachtoffer.component';
+import { GetuigeComponent } from './zelf-doen/zelf-doen-body/getuige/getuige.component';
+import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +55,12 @@ import { RegisterComponent } from './register/register.component';
     StellingenComponent,
     StellingenBodyComponent,
     RegisterComponent,
+    SeksueleIntimidatieComponent,
+    StrafbaarComponent,
+    AangifteComponent,
+    SlachtofferComponent,
+    GetuigeComponent,
+    PlegerComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +72,7 @@ import { RegisterComponent } from './register/register.component';
       initialState: {
         auth: null,
         codes: null,
+        userNavigation: 'details'
       }
     }),
     UserModule

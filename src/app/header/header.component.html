@@ -5,7 +5,8 @@
  --><a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
 	</div>
 	<ng-template #isAuth>
-		<a (click)="logout()">Logout</a>
+    <a [routerLink]="['/user']"><i class="fa fa-user" aria-hidden="true"></i> User</a><!--
+ --><a (click)="logout()">Logout</a>
 	</ng-template>
 </div>
 
@@ -19,7 +20,7 @@
 
 
 <div class="botnav">
-  <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Wat is seksuele intimidatie?</a>
+  <a [routerLink]="['/wat-is-seksuele-intimidatie']" routerLinkActive="active">Wat is seksuele intimidatie?</a>
   <a [routerLink]="['/wat-kan-je-zelf-doen']" routerLinkActive="active">Wat kan je zelf doen?</a>
   <a [routerLink]="['/stellingen']" routerLinkActive="active">Stellingen</a>
   <a [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
