@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ZelfDoenComponent } from './zelf-doen/zelf-doen.component';
 import { StellingenComponent } from './stellingen/stellingen.component';
@@ -11,7 +12,8 @@ import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
 	{ path: '', component: HomeComponent, pathMatch: 'full' },
-	{ path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent, pathMatch: 'full' },
 	{ path: 'wat-kan-je-zelf-doen', component: ZelfDoenComponent, pathMatch: 'full' },
 	{ path: 'stellingen', component: StellingenComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
