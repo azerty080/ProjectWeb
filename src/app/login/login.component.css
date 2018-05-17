@@ -3,8 +3,8 @@
     line-height: 1.4em;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: .771rem;
-    padding-bottom: .771rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     transition: background .25s ease-out;
     -moz-transition: background .25s ease-out;
     -webkit-transition: background .25s ease-out;
@@ -23,7 +23,7 @@
     align-items: center;
     font-weight: 700;
     min-height: 3rem;
-    width: 50%;
+    width: 10%;
     margin-bottom: .75rem;
     margin-top: 0;
     outline: none;
@@ -65,6 +65,7 @@
 
 .login-right {
   width: 65%;
+  height: 748px;
   display: flex;
   flex-direction: column;
   background: #F3F3F5;
@@ -86,7 +87,7 @@ h2 {
 }
 
 input {
-  width: 50%;
+  width: 75%;
   height: 30px;
   padding: .5rem 1rem;
   margin-bottom: .5em;
@@ -130,10 +131,9 @@ input {
   margin-right: 0.75rem;
 }
 
-app-footer {
-  margin-top: 0;
-}
-
 .topborder {
+  width: 78%;
   border-top: 1px solid rgba(127,127,127,0.3);
+  padding-top: 10px;
+  margin-top: 50px;
 }
