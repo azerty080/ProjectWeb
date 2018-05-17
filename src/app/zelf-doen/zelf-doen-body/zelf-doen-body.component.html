@@ -1,11 +1,9 @@
 <div class="left">
-  <a [routerLink]="['/wat-kan-je-zelf-doen/slachtoffer']">Als slachtoffer<i class="fa fa-chevron-right"></i></a>
-	<a [routerLink]="['/wat-kan-je-zelf-doen/getuige']">Als getuige<i class="fa fa-chevron-right"></i></a>
-	<a [routerLink]="['/wat-kan-je-zelf-doen/pleger']">Als pleger<i class="fa fa-chevron-right"></i></a>
+  <a [routerLink]="['/wat-kan-je-zelf-doen/als-slachtoffer']">Als slachtoffer<i class="fa fa-chevron-right"></i></a>
+	<a [routerLink]="['/wat-kan-je-zelf-doen/als-getuige']">Als getuige<i class="fa fa-chevron-right"></i></a>
+	<a [routerLink]="['/wat-kan-je-zelf-doen/als-pleger']">Als pleger<i class="fa fa-chevron-right"></i></a>
 </div>
 
 <div class="right">
-  <app-zelf-doen-body-slachtoffer></app-zelf-doen-body-slachtoffer>
-  <app-zelf-doen-body-getuige></app-zelf-doen-body-getuige>
-  <app-zelf-doen-body-pleger></app-zelf-doen-body-pleger>
+  <router-outlet name='content'></router-outlet>
 </div>
