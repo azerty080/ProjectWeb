@@ -6,7 +6,7 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['../login/login.component.css']
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
+    this.createForm();
   }
 
   createForm() {
@@ -26,7 +27,7 @@ export class RegisterComponent implements OnInit {
 		})
   }
 
-  authenticateUser() {
+  register() {
     this.authService.register(this.registerForm.value);
   }
 
