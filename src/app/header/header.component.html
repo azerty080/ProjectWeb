@@ -1,7 +1,7 @@
 <div class="topnav">
 	<div *ngIf="!authService.loggedIn() else isAuth">
     <a><i class="fa fa-search" aria-hidden="true"></i></a><!--
- --><a [routerLink]="['/login']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a><!--
+ --><a [routerLink]="['/register']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a><!--
  --><a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
 	</div>
 	<ng-template #isAuth>
@@ -19,10 +19,8 @@
 
 
 <div class="botnav">
-  <ul>
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a [routerLink]="['/']">Wat is seksuele intimidatie?</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/wat-kan-je-zelf-doen']">Wat kan je zelf doen?</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/stellingen']">Stellingen</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
-  </ul>
+  <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Wat is seksuele intimidatie?</a>
+  <a [routerLink]="['/wat-kan-je-zelf-doen']" routerLinkActive="active">Wat kan je zelf doen?</a>
+  <a [routerLink]="['/stellingen']" routerLinkActive="active">Stellingen</a>
+  <a [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
 </div>

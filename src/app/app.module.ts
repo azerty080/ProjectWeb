@@ -30,6 +30,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { reducers } from './common/reducers/index';
 import { auth } from './common/reducers/auth.reducer';
 import { codes } from './common/reducers/codes.reducer';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { codes } from './common/reducers/codes.reducer';
     ZelfDoenBodyComponent,
     StellingenComponent,
     StellingenBodyComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

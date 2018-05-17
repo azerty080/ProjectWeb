@@ -1,0 +1,23 @@
+<div class="topnav">
+  <div>
+    <a [routerLink]="['']"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+  </div>
+</div>
+
+<div class="login-container">
+  <div>
+    <h4>Registreer uw A-profiel</h4>
+    <p>Met een A-profiel krijgt u nieuws op maat, hoeft u niet steeds dezelfde gegevens in te vullen bij een aanvraag en kan u reageren op artikels en meepraten in de babbelbox.</p>
+  </div>
+
+  <div>
+    <form [formGroup]="registerForm">
+      <input type="text" id="firsname" placeholder="Voornaam" formControlName="firstname">
+      <input type="text" id="lastname" placeholder="Achternaam" formControlName="lastname">
+      <input type="text" id="email" placeholder="Vul hier uw email in" formControlName="email">
+      <input type="text" id="school" placeholder="School" formControlName="school">
+      <input type="password" id="password" placeholder="Vul hier uw wachtwoord in" formControlName="password">
+      <div class="button" (click)="register()"><span class="fa fa-user"></span> Registreren</div>
+    </form>
+  </div>
+</div>

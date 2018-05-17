@@ -21,26 +21,27 @@ export class AuthService {
   }
 
     authenticateUser(user): any {
-        let headers = new HttpHeaders();
-        headers.append('Content-Type','application/json');
+      let headers = new HttpHeaders();
+      headers.append('Content-Type','application/json');
 
-        this.http.post('http://project.api/users/validate_login', JSON.stringify(user))
-            .subscribe((v: any) => {
-                this.auth(v);
-                this.router.navigate(['user']);
-            },
-                (err: HttpErrorResponse) => {
-                    console.log(err)
-                    if (err.status === 404 || err.status === 403) {
-                        console.log('No user found for given credentials.');
-                    } else {
-                        console.log(`Oops. That login failed. Please try again.`);
-                    }
-                }
-            );
+      this.http.post('http://project.api/users/validate_login', JSON.stringify(user))
+          .subscribe((v: any) => {
+              this.auth(v);
+              this.router.navigate(['user']);
+          },
+              (err: HttpErrorResponse) => {
+                  console.log(err)
+                  if (err.status === 404 || err.status === 403) {
+                      console.log('No user found for given credentials.');
+                  } else {
+                      console.log(`Oops. That login failed. Please try again.`);
+                  }
+              }
+          );
     }
 
     auth(res: any) {
+        console.log(res);
         this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email }});
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify({ user: res.user.email, id: res.user.id }));
@@ -55,5 +56,26 @@ export class AuthService {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         this.router.navigate(['']);
+    }
+
+    register(user) {
+      let headers = new HttpHeaders();
+      headers.append('Content-Type','application/json');
+
+      this.http.post('http://project.api/users', JSON.stringify(user))
+          .subscribe((v: any) => {
+              let res = {user: v, token: v.attributes.token};
+              this.auth(res);
+              this.router.navigate(['user']);
+          },
+              (err: HttpErrorResponse) => {
+                  console.log(err)
+                  if (err.status === 404 || err.status === 403) {
+                      console.log('No user found for given credentials.');
+                  } else {
+                      console.log(`Oops. That login failed. Please try again.`);
+                  }
+              }
+          );
     }
 }
