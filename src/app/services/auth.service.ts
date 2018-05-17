@@ -41,6 +41,7 @@ export class AuthService {
     }
 
     auth(res: any) {
+        console.log(res);
         this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email }});
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify({ user: res.user.email, id: res.user.id }));
@@ -63,7 +64,8 @@ export class AuthService {
 
       this.http.post('http://project.api/users', JSON.stringify(user))
           .subscribe((v: any) => {
-              this.auth(v);
+              let res = {user: v, token: v.attributes.token};
+              this.auth(res);
               this.router.navigate(['user']);
           },
               (err: HttpErrorResponse) => {
