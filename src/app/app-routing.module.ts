@@ -11,7 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
-	{ path: '', component: HomeComponent, pathMatch: 'full' },
+	{ path: '', redirectTo: 'wat-is-seksuele-intimidatie', pathMatch: 'full' },
+	{ path: 'wat-is-seksuele-intimidatie', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
 	{ path: 'wat-kan-je-zelf-doen', component: ZelfDoenComponent, pathMatch: 'full' },
