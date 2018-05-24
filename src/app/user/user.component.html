@@ -3,8 +3,8 @@
 
 <main>
   <div class="sidebar" [ngStyle]="{'z-index': isAddingCode ? '-1' : '0'}">
-    <a (click)="setPage('details')">Gegevens <i class="fa fa-chevron-right"></i></a>
-    <a (click)="setPage('codes')">Codes <i class="fa fa-chevron-right"></i></a>
+    <a [ngClass]="page == 'details' ? 'active' : ''" (click)="setPage('details')">Gegevens <i class="fa fa-chevron-right"></i></a>
+    <a [ngClass]="page == 'codes' ? 'active' : ''" (click)="setPage('codes')">Codes <i class="fa fa-chevron-right"></i></a>
   </div>
 
   <div class="feed-container">
@@ -12,32 +12,36 @@
 
     <table class="codes" *ngIf="page == 'codes' && codes.length > 0">
       <thead>
-        <th>Name</th>
-        <th>Key code</th>
-        <th class="delete-row">Delete</th>
+      <tr>
+        <th>Naam</th>
+        <th>Code</th>
+        <th class="delete-row">Acties</th>
+      </tr>
       </thead>
-      <tbody>
+      <tbody class="codes">
         <tr *ngFor="let code of codes">
           <td>{{code.name}}</td>
           <td>{{code.keyCode}}</td>
-          <td class="delete-row" (click)="deleteCode(code.id)"><span class="fa fa-times"></span></td>
+          <td class="delete-row">
+            <span class="fa fa-cog"></span>
+            <span class="fa fa-times" (click)="deleteCode(code.id)"></span>
+          </td>
         </tr>
       </tbody>
-      <div class="add-code" (click)="openModal()">Code toevoegen</div>
     </table>
 
-      <table class="no-codes" *ngIf="page == 'codes' && codes.length < 1">
-        <thead>
-          <th>Codes</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Geen codes gevonden</td>
-          </tr>
-          <tr>
-            <td><div class="add-code" (click)="openModal()">Code toevoegen?</div></td>
-          </tr>
-        </tbody>
-      </table>
+    <table class="no-codes" *ngIf="page == 'codes' && codes.length < 1">
+      <thead>
+      <tr>
+        <th>Codes</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Geen codes gevonden</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="add-code button" *ngIf="page == 'codes'" (click)="openModal()">Code toevoegen</div>
   </div>
 </main>
