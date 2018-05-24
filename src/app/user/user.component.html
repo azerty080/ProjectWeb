@@ -1,5 +1,6 @@
 <app-user-header user="user"></app-user-header>
-<app-add-code-modal (close)="closeModal()" *ngIf="isAddingCode"></app-add-code-modal>
+<app-add-code-modal (close)="closeAddingModal()" *ngIf="isAddingCode"></app-add-code-modal>
+<app-edit-code-modal (close)="closeEditingModal()" *ngIf="isEditingCode"></app-edit-code-modal>
 
 <main>
   <div class="sidebar" [ngStyle]="{'z-index': isAddingCode ? '-1' : '0'}">
@@ -23,7 +24,7 @@
           <td>{{code.name}}</td>
           <td>{{code.keyCode}}</td>
           <td class="delete-row">
-            <span class="fa fa-cog"></span>
+            <span class="fa fa-cog" (click)="openEditingModal(code)"></span>
             <span class="fa fa-times" (click)="deleteCode(code.id)"></span>
           </td>
         </tr>
@@ -42,6 +43,8 @@
         </tr>
       </tbody>
     </table>
-    <div class="add-code button" *ngIf="page == 'codes'" (click)="openModal()">Code toevoegen</div>
+    <div class="add-code button" *ngIf="page == 'codes'" (click)="openAddingModal()">Code toevoegen</div>
   </div>
 </main>
+
+<!-- editCode({id:code.id, codeName:code.name, keyCode:code.keyCode}) -->

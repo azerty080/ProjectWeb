@@ -14,23 +14,36 @@ import { State } from '../common/reducers';
 export class UserComponent {
   codes: Array<any> = [];
   page: string;
-  isAddingCode: boolean = false;
+  isAddingCode = false;
+  isEditingCode = false;
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>) {
-    store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v });
+    store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v; });
     store.select('userNavigation').subscribe((v) => this.page = v);
   }
 
-  openModal() {
+  openAddingModal() {
     this.isAddingCode = true;
   }
 
-  closeModal() {
+  closeAddingModal() {
     this.isAddingCode = false;
+  }
+
+  openEditingModal() {
+    this.isEditingCode = true;
+  }
+
+  closeEditingModal() {
+    this.isEditingCode = false;
   }
 
   deleteCode(id) {
     this.codeService.deleteCode(id);
+  }
+
+  editCode(args) {
+    this.codeService.editCode(args);
   }
 
   setPage(page) {
