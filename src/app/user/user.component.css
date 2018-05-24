@@ -39,9 +39,19 @@ th:last-of-type, tr td:last-of-type {
 }
 
 .add-code {
-  color: blue;
-  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+  background: #0064B4;
   cursor: pointer;
+  padding: 15px;
+  display: block !important;
+  margin: 10px -5px 10px 0;
+  float: right;
+  transition: background .25s ease-in-out;
+}
+
+.add-code:hover {
+  background: #003f72;
 }
 
 .fa-times {

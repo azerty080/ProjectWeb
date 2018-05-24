@@ -23,21 +23,18 @@
           <td class="delete-row" (click)="deleteCode(code.id)"><span class="fa fa-times"></span></td>
         </tr>
       </tbody>
-      <div class="add-code" (click)="openModal()">Code toevoegen</div>
     </table>
 
-      <table class="no-codes" *ngIf="page == 'codes' && codes.length < 1">
-        <thead>
-          <th>Codes</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Geen codes gevonden</td>
-          </tr>
-          <tr>
-            <td><div class="add-code" (click)="openModal()">Code toevoegen?</div></td>
-          </tr>
-        </tbody>
-      </table>
+    <table class="no-codes" *ngIf="page == 'codes' && codes.length < 1">
+      <thead>
+        <th>Codes</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Geen codes gevonden</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="add-code button" *ngIf="page == 'codes'" (click)="openModal()">Code toevoegen</div>
   </div>
 </main>
