@@ -18,7 +18,7 @@ h1:hover {
   background-repeat: no-repeat;
   background-size: cover;
 	position: absolute;
-  top: 7.65em;
+  top: 2.85em;
 	left: 0;
 	z-index: -1;
 	width: 100%;
@@ -32,6 +32,7 @@ h1:hover {
 @-moz-document url-prefix() {
   .background {
     margin-top: -82px !important;
+    top: 7.65em !important;
   }
 
   .topnav {
