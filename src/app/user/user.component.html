@@ -12,9 +12,11 @@
 
     <table class="codes" *ngIf="page == 'codes' && codes.length > 0">
       <thead>
+      <tr>
         <th>Naam</th>
         <th>Code</th>
         <th class="delete-row">Verwijderen</th>
+      </tr>
       </thead>
       <tbody class="codes">
         <tr *ngFor="let code of codes">
@@ -27,7 +29,9 @@
 
     <table class="no-codes" *ngIf="page == 'codes' && codes.length < 1">
       <thead>
+      <tr>
         <th>Codes</th>
+      </tr>
       </thead>
       <tbody>
         <tr>
