@@ -1,6 +1,10 @@
 div {
-	margin: 0 100px;
+	margin: 0 100px 20px 100px;
 	width: 45%;
+}
+
+p {
+	margin-left: 10px;
 }
 
 .sensoa {
