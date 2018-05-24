@@ -204,3 +204,16 @@ h2 {
         height: 3.5em;
     }
 }
+
+
+@media only screen and (max-width: 640px) {
+    app-footer {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .media {
+    	margin-top: 40px;
+    	margin-left: -10px;
+    }
+}
