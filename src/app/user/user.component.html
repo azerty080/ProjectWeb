@@ -15,14 +15,17 @@
       <tr>
         <th>Naam</th>
         <th>Code</th>
-        <th class="delete-row">Verwijderen</th>
+        <th class="delete-row">Acties</th>
       </tr>
       </thead>
       <tbody class="codes">
         <tr *ngFor="let code of codes">
           <td>{{code.name}}</td>
           <td>{{code.keyCode}}</td>
-          <td class="delete-row" (click)="deleteCode(code.id)"><span class="fa fa-times"></span></td>
+          <td class="delete-row">
+            <span class="fa fa-cog"></span>
+            <span class="fa fa-times" (click)="deleteCode(code.id)"></span>
+          </td>
         </tr>
       </tbody>
     </table>
