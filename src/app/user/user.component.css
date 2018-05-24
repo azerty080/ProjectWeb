@@ -91,3 +91,9 @@ main {
 .feed-container {
   width: 40%;
 }
+
+.sidebar a:hover, .sidebar a.active{
+  color: #0064B4;
+  border-bottom: 3px solid #0064B4;
+  padding: 15px;
+}

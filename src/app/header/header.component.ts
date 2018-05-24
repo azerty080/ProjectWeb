@@ -6,14 +6,17 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent {
+  name: string = 'User';
 
   @ViewChild('searchBar') searchBar: ElementRef;
 
   constructor(private authService: AuthService) {
-  }
-
-  ngAfterViewInit() {
+    this.authService.authObj.subscribe((v) => {
+      if (v && v.firstname) {
+        this.name = v.firstname;
+      }
+    });
   }
 
   toggleSearchBar() {
