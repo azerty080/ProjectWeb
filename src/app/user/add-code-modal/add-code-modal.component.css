@@ -23,12 +23,12 @@ form {
 
 form input[type="text"] {
   max-width: 200px;
-  margin: 10px 0;
+  margin-bottom: 10px;
   padding: 10px;
 }
 
-.form-title {
-  padding: 10px;
+form input[type="text"]:last-of-type {
+  margin-bottom: 0;
 }
 
 .close {
