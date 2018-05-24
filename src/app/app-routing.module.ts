@@ -17,38 +17,43 @@ import {GetuigeComponent} from './zelf-doen/zelf-doen-body/getuige/getuige.compo
 import {PlegerComponent} from './zelf-doen/zelf-doen-body/pleger/pleger.component';
 
 const appRoutes: Routes = [
-	{ path: '', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
-	{ path: 'wat-is-seksuele-intimidatie', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
-	{ path: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', component: HomeComponent, pathMatch: 'full', children: [{path: '', component: SeksueleIntimidatieComponent, outlet: 'content'}] },
-	{ path: 'wat-is-seksuele-intimidatie/welk-gedrag-is-strafbaar', component: HomeComponent, pathMatch: 'full', children: [{path: '', component: StrafbaarComponent, outlet: 'content'}] },
-	{ path: 'wat-is-seksuele-intimidatie/hoe-kan-ik-aangifte-doen', component: HomeComponent, pathMatch: 'full', children: [{path: '', component: AangifteComponent, outlet: 'content'}] },
+  { path: '', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
+  { path: 'wat-is-seksuele-intimidatie', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
+  { path: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', component: HomeComponent, pathMatch: 'full', children:
+      [{path: '', component: SeksueleIntimidatieComponent, outlet: 'content'}] },
+  { path: 'wat-is-seksuele-intimidatie/welk-gedrag-is-strafbaar', component: HomeComponent, pathMatch: 'full', children:
+      [{path: '', component: StrafbaarComponent, outlet: 'content'}] },
+  { path: 'wat-is-seksuele-intimidatie/hoe-kan-ik-aangifte-doen', component: HomeComponent, pathMatch: 'full', children:
+      [{path: '', component: AangifteComponent, outlet: 'content'}] },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
-	{ path: 'wat-kan-je-zelf-doen', redirectTo: 'wat-kan-je-zelf-doen/als-slachtoffer', pathMatch: 'full' },
-	{ path: 'wat-kan-je-zelf-doen/als-slachtoffer', component: ZelfDoenComponent, pathMatch: 'full', children: [{path: '', component: SlachtofferComponent, outlet: 'content'}] },
-	{ path: 'wat-kan-je-zelf-doen/als-getuige', component: ZelfDoenComponent, pathMatch: 'full', children: [{path: '', component: GetuigeComponent, outlet: 'content'}] },
-	{ path: 'wat-kan-je-zelf-doen/als-pleger', component: ZelfDoenComponent, pathMatch: 'full', children: [{path: '', component: PlegerComponent, outlet: 'content'}] },
-	{ path: 'stellingen', component: StellingenComponent, pathMatch: 'full' },
+  { path: 'wat-kan-je-zelf-doen', redirectTo: 'wat-kan-je-zelf-doen/als-slachtoffer', pathMatch: 'full' },
+  { path: 'wat-kan-je-zelf-doen/als-slachtoffer', component: ZelfDoenComponent, pathMatch: 'full', children:
+      [{path: '', component: SlachtofferComponent, outlet: 'content'}] },
+  { path: 'wat-kan-je-zelf-doen/als-getuige', component: ZelfDoenComponent, pathMatch: 'full', children:
+      [{path: '', component: GetuigeComponent, outlet: 'content'}] },
+  { path: 'wat-kan-je-zelf-doen/als-pleger', component: ZelfDoenComponent, pathMatch: 'full', children:
+      [{path: '', component: PlegerComponent, outlet: 'content'}] },
+  { path: 'stellingen', component: StellingenComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
   { path: 'user', loadChildren: './user/user.module#UserModule', canActivate: [AuthGuard] },
-
-	// { path: '**', component: PageNotFoundComponent }
-]
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
-	imports: [
-		RouterModule.forRoot(
-			appRoutes,
-			{
-				// enableTracing: true, // <-- debugging purposes only
-				// preloadingStrategy: SelectivePreloadingStrategy,
-			}
-		)
-	],
-	exports: [
-		RouterModule
-	],
-	providers: [
-	]
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      {
+        // enableTracing: true, // <-- debugging purposes only
+        // preloadingStrategy: SelectivePreloadingStrategy,
+      }
+    )
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: [
+  ]
 })
 export class AppRoutingModule { }
