@@ -18,7 +18,7 @@ export class UserComponent {
   isEditingCode = false;
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>) {
-    store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v; });
+    store.select('codes').filter((v) => v != null).subscribe((v) => {console.log(v); this.codes = v; });
     store.select('userNavigation').subscribe((v) => this.page = v);
   }
 
@@ -43,10 +43,11 @@ export class UserComponent {
   }
 
   editCode(args) {
-    this.codeService.editCode(args);
+    // this.codeService.editCode(args);
   }
 
   setPage(page) {
     this.store.dispatch({type: 'SET_PAGE', payload: page});
+    console.log(page);
   }
 }

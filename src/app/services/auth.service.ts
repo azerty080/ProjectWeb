@@ -24,7 +24,7 @@ export class AuthService {
       let headers = new HttpHeaders();
       headers.append('Content-Type','application/json');
 
-      this.http.post('http://project.api/users/validate_login', JSON.stringify(user))
+      this.http.post('https://api20op20.herokuapp.com/api/auth', user)
           .subscribe((v: any) => {
               this.auth(v);
               this.router.navigate(['user']);
@@ -61,9 +61,9 @@ export class AuthService {
       let headers = new HttpHeaders();
       headers.append('Content-Type','application/json');
 
-      this.http.post('http://project.api/users', JSON.stringify(user))
+      this.http.post('https://api20op20.herokuapp.com/api/teacher/', user)
           .subscribe((v: any) => {
-              let res = {user: v, token: v.attributes.token};
+              let res = {user: v.user, token: v.token};
               this.auth(res);
               this.router.navigate(['user']);
           },

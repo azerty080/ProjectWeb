@@ -15,12 +15,12 @@ export class CodeService {
 
     // Gets user ID for the GET codes call.
     const user = JSON.parse(localStorage.getItem('user'));
-    this.getCodesById(user.id);
+    this.getCodesById();
   }
 
-  getCodesById(id) {
+  getCodesById() {
     const token = localStorage.getItem('token');
-    this.http.get(`http://project.api/codes/${id}`, { headers: new HttpHeaders().set('Authorization', `Bearer ${token}`) })
+    this.http.get(`https://api20op20.herokuapp.com/api/codes/all`, { headers: new HttpHeaders().set('x-auth-token', `${token}`) })
       .subscribe((v: any) => {
             // codes get updated in store.
             this.store.dispatch({ type: 'CREATE_CODES', payload: v});
@@ -31,8 +31,8 @@ export class CodeService {
 
   addCode(code: any) {
     const token = localStorage.getItem('token');
-    return this.http.post(`http://project.api/code`, code, {
-			headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    return this.http.post(`https://api20op20.herokuapp.com/api/codes/add`, code, {
+			headers: new HttpHeaders().set('x-auth-token', `${token}`)
 		});
   }
 
