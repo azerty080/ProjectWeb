@@ -13,8 +13,8 @@ export class AppComponent {
     const token = localStorage.getItem('token');
 
     if (token != undefined) {
-      this.http.get('http://project.api/me', {
-        headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+      this.http.get('https://api20op20.herokuapp.com/api/teacher/me', {
+        headers: new HttpHeaders().set('x-auth-token', `${token}`)
       })
       .subscribe((v: any) => {
           this.store.dispatch({type: 'CREATE_AUTH', payload: { id: v.user.id, username: v.user.email, firstname: v.user.firstname, lastname: v.user.lastname, school: v.user.school }});
