@@ -7,14 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { ZelfDoenComponent } from './zelf-doen/zelf-doen.component';
 import { StellingenComponent } from './stellingen/stellingen.component';
 import { ContactComponent } from './contact/contact.component';
+import { SeksueleIntimidatieComponent } from './home/home-body/seksuele-intimidatie/seksuele-intimidatie.component';
+import { StrafbaarComponent } from './home/home-body/strafbaar/strafbaar.component';
+import { AangifteComponent } from './home/home-body/aangifte/aangifte.component';
+import { SlachtofferComponent } from './zelf-doen/zelf-doen-body/slachtoffer/slachtoffer.component';
+import { GetuigeComponent } from './zelf-doen/zelf-doen-body/getuige/getuige.component';
+import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.component';
+import { GameComponent } from './game/game.component';
 
 import { AuthGuard } from './guards/auth.guard';
-import {SeksueleIntimidatieComponent} from './home/home-body/seksuele-intimidatie/seksuele-intimidatie.component';
-import {StrafbaarComponent} from './home/home-body/strafbaar/strafbaar.component';
-import {AangifteComponent} from './home/home-body/aangifte/aangifte.component';
-import {SlachtofferComponent} from './zelf-doen/zelf-doen-body/slachtoffer/slachtoffer.component';
-import {GetuigeComponent} from './zelf-doen/zelf-doen-body/getuige/getuige.component';
-import {PlegerComponent} from './zelf-doen/zelf-doen-body/pleger/pleger.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   { path: 'stellingen', component: StellingenComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
   { path: 'user', loadChildren: './user/user.module#UserModule', canActivate: [AuthGuard] },
+  { path: 'game', component: GameComponent, pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent }
 ];
 
