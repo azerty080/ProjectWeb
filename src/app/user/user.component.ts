@@ -18,7 +18,7 @@ export class UserComponent {
   isEditingCode = false;
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>) {
-    store.select('codes').filter((v) => v != null).subscribe((v) => {this.codes = v.codes; });
+    store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v.codes; });
     store.select('userNavigation').subscribe((v) => this.page = v);
   }
 

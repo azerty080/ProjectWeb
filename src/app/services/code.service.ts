@@ -15,12 +15,12 @@ export class CodeService {
 
     // Gets user ID for the GET codes call.
     const user = JSON.parse(localStorage.getItem('user'));
-    this.getCodesById();
+    this.getCodes();
   }
 
-  getCodesById() {
+  getCodes() {
     const token = localStorage.getItem('token');
-    this.http.get(`https://api20op20.herokuapp.com/api/codes/all`, { headers: new HttpHeaders().set('x-auth-token', `${token}`) })
+    this.http.get(`https://api20op20.herokuapp.com/api/codes/`, { headers: new HttpHeaders().set('x-auth-token', `${token}`) })
       .subscribe((v: any) => {
             // codes get updated in store.
             this.store.dispatch({ type: 'CREATE_CODES', payload: v});
@@ -31,15 +31,15 @@ export class CodeService {
 
   addCode(code: any) {
     const token = localStorage.getItem('token');
-    return this.http.post(`https://api20op20.herokuapp.com/api/codes/add`, code, {
+    return this.http.post(`https://api20op20.herokuapp.com/api/codes/`, code, {
 			headers: new HttpHeaders().set('x-auth-token', `${token}`)
 		});
   }
 
   deleteCode(id: any) {
     const token = localStorage.getItem('token');
-    this.http.delete(`http://project.api/code/${id}`, {
-			headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    this.http.delete(`https://api20op20.herokuapp.com/api/codes/${id}`, {
+			headers: new HttpHeaders().set('x-auth-token', `${token}`)
 		}).subscribe((v: any) => {
       this.deleteCodeInStore(v);
     })
