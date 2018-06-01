@@ -1,0 +1,30 @@
+#canvas {
+  width: 960px;
+  height: 678px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: 1px solid #000;
+  background-size: cover;
+  transition: all 0.5s;
+}
+
+#mc {
+  position: absolute;
+  bottom: 0;
+  height: 480px;
+  width: 270px;
+}
+
+.bedroom {
+  background-image: url('../../assets/game/bedroom.jpg');
+}
+
+.classroom {
+  background-image: url('../../assets/game/classroom.jpg');
+}
+
+.playground {
+  background-image: url('../../assets/game/playground.jpg');
+}
