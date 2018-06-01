@@ -10,7 +10,10 @@ export function codes(state: any, action: Action) {
               codes: [...state.codes, action.payload]
             }
         case 'DELETE_CODE':
-            return state.filter((v) => v.id !== action.payload);
+            return {
+              ...state,
+              codes: state.codes.filter((v) => v._id !== action.payload._id)
+            }
         default:
             return state;
     }

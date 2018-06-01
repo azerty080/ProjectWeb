@@ -39,6 +39,7 @@ import { AangifteComponent } from './home/home-body/aangifte/aangifte.component'
 import { SlachtofferComponent } from './zelf-doen/zelf-doen-body/slachtoffer/slachtoffer.component';
 import { GetuigeComponent } from './zelf-doen/zelf-doen-body/getuige/getuige.component';
 import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.compon
     SlachtofferComponent,
     GetuigeComponent,
     PlegerComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
