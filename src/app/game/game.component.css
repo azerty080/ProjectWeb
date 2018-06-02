@@ -17,6 +17,10 @@
   width: 270px;
 }
 
+.center {
+  transform: translateX(-50%) translateY(-50%);
+}
+
 .bedroom {
   background-image: url('../../assets/game/bedroom.jpg');
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { scene1, scene2, scene3 } from './dialogs/day-one';
+import { Store } from '@ngrx/store';
+import { State } from '../common/reducers';
 
 @Component({
   selector: 'app-game',
@@ -12,12 +14,15 @@ export class GameComponent implements OnInit {
   counter: any = 0;
   scene: any = 1;
   canvasElement: any;
+  modalElement: any;
+  showModal: Boolean = false;
 
-  constructor() { }
+  constructor(private store: Store<State>) { }
 
   ngOnInit() {
     this.text = scene1[0].dialog;
     this.canvasElement = document.getElementById('canvas');
+    this.modalElement = document.getElementsByTagName('app-question-modal')[0];
   }
 
   next() {
@@ -51,6 +56,8 @@ export class GameComponent implements OnInit {
       this.text = scene3[this.counter].dialog;
       this.counter = this.counter + 1;
       return;
+    } else if (this.scene == 3 && this.counter == scene3.length) {
+      this.store.dispatch({ type: 'SET_MODAL', payload: true });
     }
   }
 
