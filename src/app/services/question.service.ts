@@ -10,9 +10,8 @@ export class QuestionService {
   }
 
   postQuestion(v: any) {
-    console.log(v);
     const token = localStorage.getItem('token');
-    return this.http.post(`http://localhost:3000/api/question/`, v, {
+    return this.http.post(`https://api20op20.herokuapp.com/api/question/`, { answer: v.answer, question: v.question }, {
 			headers: new HttpHeaders().set('x-auth-token', `${token}`)
 		});
   }

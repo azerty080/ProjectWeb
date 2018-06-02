@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { scene1, scene2, scene3 } from './dialogs/day-one';
+import { scene1, scene2, scene3, scene3a, scene3b, scene4 } from './dialogs/day-one';
 import { Store } from '@ngrx/store';
 import { State } from '../common/reducers';
 import { QuestionService } from '../services/question.service';
@@ -53,12 +53,35 @@ export class GameComponent implements OnInit {
       this.canvasElement.classList.add('playground');
     }
 
+    if (this.scene == 3 && this.counter == 2) {
+      this.store.dispatch({ type: 'SET_MODAL', payload: true });
+      return;
+    }
+
     if (this.scene == 3 && this.counter < scene3.length) {
       this.text = scene3[this.counter].dialog;
       this.counter = this.counter + 1;
       return;
     } else if (this.scene == 3 && this.counter == scene3.length) {
       this.store.dispatch({ type: 'SET_MODAL', payload: true });
+      this.store.dispatch({ type: 'SET_QUESTION_NUMBER', payload: 1 });
+      this.scene = 3.5;
+      return;
+    }
+
+    if (this.scene == 3.5 && this.counter < scene3b.length) {
+      this.text = scene3b[this.counter].dialog;
+      this.counter = this.counter + 1;
+      return;
+    } else if (this.scene == 3.5 && this.counter == scene3b.length) {
+      this.resetCounter();
+      this.scene = 4;
+    }
+
+    if (this.scene == 4 && this.counter < scene4.length) {
+      this.text = scene4[this.counter].dialog;
+      this.counter = this.counter + 1;
+      return;
     }
   }
 
@@ -73,7 +96,38 @@ export class GameComponent implements OnInit {
   emitChoice(v) {
     v.question = v.question + 1;
     this.questionService.postQuestion(v).subscribe((x) => {
-      console.log(x);
+      this.setNextDialog(v.question - 1, v.index);
+      this.store.dispatch({ type: 'SET_MODAL', payload: false });
     });
+  }
+
+  setNextDialog(q, i) {
+    switch(this.scene) {
+      case 3: {
+         if ( i == 0 && q == 0 ) {
+          this.resetCounter();
+          this.text = scene3a[this.counter].dialog;
+         } else {
+           this.counter = this.counter + 1;
+           this.next();
+         }
+
+         break;
+      }
+      case 3.5: {
+        if ( i == 0 && q == 1 ) {
+          this.counter = this.counter + 2;
+        } else {
+          this.resetCounter();
+        }
+        this.next();
+
+        break;
+      }
+      default: {
+         //statements;
+         break;
+      }
+   }
   }
 }

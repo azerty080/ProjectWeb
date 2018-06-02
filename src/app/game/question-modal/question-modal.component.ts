@@ -2,7 +2,6 @@ import { Component, OnInit, trigger, state, style, transition, animate, Input, O
 import { Store } from '@ngrx/store';
 import { State } from '../../common/reducers';
 import { questions } from '../dialogs/question';
-import { questionNumber } from '../../common/reducers/question-number.reducer';
 
 @Component({
   selector: 'app-question-modal',
@@ -26,16 +25,21 @@ export class QuestionModalComponent implements OnInit {
   visible: Boolean;
 
   constructor(private store: Store<State>) {
-    store.select('questionModal').subscribe((v) => { this.visible = v; });
-    store.select('questionNumber').subscribe((v) => { this.questionNumber = v; });
+    store.select('questionModal').subscribe((v) => this.visible = v );
+    store.select('questionNumber').subscribe((v) => {this.setQuestion(v)});
   }
 
   ngOnInit() {
-    this.question = questions[this.questionNumber];
+    // this.question = questions[this.questionNumber];
   }
 
-  emitValue(v) {
-    this.sendChoice.emit({ answer: v, question: this.questionNumber });
+  emitValue(v, index) {
+    this.sendChoice.emit({ answer: v, question: this.questionNumber, index: index });
+  }
+
+  setQuestion(number) {
+    this.questionNumber = number;
+    this.question = questions[number];
   }
 
 }
