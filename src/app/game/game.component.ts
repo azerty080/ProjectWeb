@@ -116,7 +116,7 @@ export class GameComponent implements OnInit {
       }
       case 3.5: {
         if ( i == 0 && q == 1 ) {
-          this.counter = this.counter + 2;
+          this.counter = 2;
         } else {
           this.resetCounter();
         }
