@@ -1,6 +1,7 @@
 import { Component, OnInit, trigger, state, style, transition, animate, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State } from '../../common/reducers';
+import { questions } from '../dialogs/question';
 
 @Component({
   selector: 'app-question-modal',
@@ -18,6 +19,8 @@ import { State } from '../../common/reducers';
 })
 export class QuestionModalComponent implements OnInit {
 
+  @Input() questionNumber = 0;
+  question: any;
   visible: Boolean;
 
   constructor(private store: Store<State>) {
@@ -25,6 +28,7 @@ export class QuestionModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.question = questions[this.questionNumber];
   }
 
 }
