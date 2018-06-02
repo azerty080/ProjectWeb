@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { scene1, scene2, scene3 } from './dialogs/day-one';
 import { Store } from '@ngrx/store';
 import { State } from '../common/reducers';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-game',
@@ -17,7 +18,7 @@ export class GameComponent implements OnInit {
   modalElement: any;
   showModal: Boolean = false;
 
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<State>, private questionService: QuestionService) { }
 
   ngOnInit() {
     this.text = scene1[0].dialog;
@@ -67,5 +68,12 @@ export class GameComponent implements OnInit {
 
   newScene() {
     this.scene = this.scene + 1;
+  }
+
+  emitChoice(v) {
+    v.question = v.question + 1;
+    this.questionService.postQuestion(v).subscribe((x) => {
+      console.log(x);
+    });
   }
 }

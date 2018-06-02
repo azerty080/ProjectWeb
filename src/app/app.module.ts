@@ -34,6 +34,7 @@ import { QuestionModalComponent } from './game/question-modal/question-modal.com
 
 // services
 import { AuthService } from './services/auth.service';
+import { QuestionService } from './services/question.service';
 import { AuthGuard } from './guards/auth.guard';
 
 // reducers
@@ -42,6 +43,7 @@ import { auth } from './common/reducers/auth.reducer';
 import { codes } from './common/reducers/codes.reducer';
 import { userNavigation} from './common/reducers/user-navigation.reducer';
 import { questionModal } from './common/reducers/question-modal.reducer';
+import { questionNumber } from './common/reducers/question-number.reducer';
 
 @NgModule({
   declarations: [
@@ -80,11 +82,12 @@ import { questionModal } from './common/reducers/question-modal.reducer';
         codes: null,
         userNavigation: 'details',
         questionModal: false,
+        questionNumber: 0
       }
     }),
     UserModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, QuestionService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
