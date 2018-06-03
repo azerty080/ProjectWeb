@@ -32,21 +32,34 @@ export class CodeService {
   addCode(code: any) {
     const token = localStorage.getItem('token');
     return this.http.post(`http://project.api/code`, code, {
-			headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
-		});
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    });
   }
 
   deleteCode(id: any) {
     const token = localStorage.getItem('token');
     this.http.delete(`http://project.api/code/${id}`, {
-			headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
-		}).subscribe((v: any) => {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }).subscribe((v: any) => {
       this.deleteCodeInStore(v);
-    })
+    });
+  }
+
+  editCode(args: any) {
+    const token = localStorage.getItem('token');
+    this.http.put(`http://project.api/code/${args['codeName']}/${args['keyCode']}/${args['id']}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }).subscribe((v: any) => {
+      this.editCodeInStore(v);
+    });
   }
 
   addCodeInStore(code) {
     this.store.dispatch({ type: 'ADD_CODES', payload: code});
+  }
+
+  editCodeInStore(code) {
+    this.store.dispatch({type: 'UPDATE_CODE', payload: code});
   }
 
   deleteCodeInStore(id) {
