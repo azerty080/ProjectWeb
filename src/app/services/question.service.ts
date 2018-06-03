@@ -11,7 +11,14 @@ export class QuestionService {
 
   postQuestion(v: any, code: string) {
     const token = localStorage.getItem('token');
-    return this.http.post(`https://api20op20.herokuapp.com/api/question/`, { answer: v.answer, question: v.question, keyCode: code }, {
+    return this.http.post(`https://api20op20.herokuapp.com/api/question/`, { answer: v.answer, question: v.question, code: code }, {
+			headers: new HttpHeaders().set('x-auth-token', `${token}`)
+		});
+  }
+
+  getQuestions(keyCode) {
+    const token = localStorage.getItem('token');
+    return this.http.get(`http://localhost:3000/api/question/${keyCode}`, {
 			headers: new HttpHeaders().set('x-auth-token', `${token}`)
 		});
   }

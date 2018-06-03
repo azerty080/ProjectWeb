@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HeaderComponent {
   name: string = 'User';
 
   @ViewChild('searchBar') searchBar: ElementRef;
+  @Input() disableImg: Boolean = false;
 
   constructor(private authService: AuthService) {
     this.authService.authObj.subscribe((v) => {

@@ -1,4 +1,7 @@
-<app-code-modal (sendCode)="setCode($event)" *ngIf="!isReady else game"></app-code-modal>
+<div *ngIf="!isReady else game">
+  <app-header [disableImg]="true"></app-header>
+  <app-code-modal (sendCode)="setCode($event)"></app-code-modal>
+</div>
 <ng-template #game>
   <app-game-display [code]="code"></app-game-display>
 </ng-template>

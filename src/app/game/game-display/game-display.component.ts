@@ -11,7 +11,7 @@ import { QuestionService } from '../../services/question.service';
 })
 export class GameDisplayComponent implements OnInit {
 
-  @Input() code: string = null;
+  @Input() code: any = null;
   text: string;
   counter: any = 0;
   scene: any = 1;

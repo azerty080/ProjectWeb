@@ -18,7 +18,7 @@ export class CodeModalComponent implements OnInit {
 
   validate(keyCode) {
     this.codeService.validateCode(keyCode).subscribe((v: any) => {
-      if (v) this.sendCode.emit(v.keyCode);
+      if (v) this.sendCode.emit(v);
     });
   }
 
