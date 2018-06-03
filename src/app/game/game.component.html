@@ -1,10 +1,4 @@
-<div id="canvas" class="bedroom" #canvas>
-  <img src="../../assets/game/mc.png" id="mc" />
-  <app-question-modal (sendChoice)="emitChoice($event)"></app-question-modal>
-</div>
-
-<p>
-  {{text}}
-</p>
-
-<div (click)="next()">Click</div>
+<app-code-modal (sendCode)="setCode($event)" *ngIf="!isReady else game"></app-code-modal>
+<ng-template #game>
+  <app-game-display [code]="code"></app-game-display>
+</ng-template>

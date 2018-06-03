@@ -44,6 +44,8 @@ import { codes } from './common/reducers/codes.reducer';
 import { userNavigation} from './common/reducers/user-navigation.reducer';
 import { questionModal } from './common/reducers/question-modal.reducer';
 import { questionNumber } from './common/reducers/question-number.reducer';
+import { CodeModalComponent } from './game/code-modal/code-modal.component';
+import { GameDisplayComponent } from './game/game-display/game-display.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +70,8 @@ import { questionNumber } from './common/reducers/question-number.reducer';
     PlegerComponent,
     GameComponent,
     QuestionModalComponent,
+    CodeModalComponent,
+    GameDisplayComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<div id="canvas" class="bedroom" #canvas>
+  <img src="../../assets/game/mc.png" id="mc" />
+  <app-question-modal (sendChoice)="emitChoice($event)"></app-question-modal>
+</div>
+
+<p>
+  {{text}}
+</p>
+
+<div (click)="next()">Click</div>

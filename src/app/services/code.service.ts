@@ -29,6 +29,13 @@ export class CodeService {
       });
   }
 
+  validateCode(keyCode: any) {
+    const token = localStorage.getItem('token');
+    return this.http.get(`https://api20op20.herokuapp.com/api/codes/${keyCode}`, {
+			headers: new HttpHeaders().set('x-auth-token', `${token}`)
+		})
+  }
+
   addCode(code: any) {
     const token = localStorage.getItem('token');
     return this.http.post(`https://api20op20.herokuapp.com/api/codes/`, code, {
