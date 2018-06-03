@@ -16,12 +16,12 @@ export class CodeService {
 
     // Gets user ID for the GET codes call.
     const user = JSON.parse(localStorage.getItem('user'));
-    this.getCodesById(user.id);
+    this.getCodes();
   }
 
-  getCodesById(id) {
+  getCodes() {
     const token = localStorage.getItem('token');
-    this.http.get(`http://project.api/codes/${id}`, { headers: new HttpHeaders().set('Authorization', `Bearer ${token}`) })
+    this.http.get(`https://api20op20.herokuapp.com/api/codes/`, { headers: new HttpHeaders().set('x-auth-token', `${token}`) })
       .subscribe((v: any) => {
             // codes get updated in store.
             this.store.dispatch({ type: 'CREATE_CODES', payload: v});
@@ -30,17 +30,24 @@ export class CodeService {
       });
   }
 
+  validateCode(keyCode: any) {
+    const token = localStorage.getItem('token');
+    return this.http.get(`https://api20op20.herokuapp.com/api/codes/${keyCode}`, {
+      headers: new HttpHeaders().set('x-auth-token', `${token}`)
+    });
+  }
+
   addCode(code: any) {
     const token = localStorage.getItem('token');
-    return this.http.post(`http://project.api/code`, code, {
-      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    return this.http.post(`https://api20op20.herokuapp.com/api/codes/`, code, {
+      headers: new HttpHeaders().set('x-auth-token', `${token}`)
     });
   }
 
   deleteCode(id: any) {
     const token = localStorage.getItem('token');
-    this.http.delete(`http://project.api/code/${id}`, {
-      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    this.http.delete(`https://api20op20.herokuapp.com/api/codes/${id}`, {
+      headers: new HttpHeaders().set('x-auth-token', `${token}`)
     }).subscribe((v: any) => {
       this.deleteCodeInStore(v);
     });
@@ -48,8 +55,9 @@ export class CodeService {
 
   editCode(args: any) {
     const token = localStorage.getItem('token');
+    // URL needs to be changed + functionality added on API server
     this.http.put(`http://project.api/code/${args['codeName']}/${args['keyCode']}/${args['id']}`, {
-      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+      headers: new HttpHeaders().set('x-auth-token', `${token}`)
     }).subscribe((v: any) => {
       this.editCodeInStore(v);
     });
