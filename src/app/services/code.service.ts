@@ -10,7 +10,8 @@ import { State } from '../common/reducers';
 export class CodeService {
 
   constructor(private http: HttpClient, private store: Store<State>) {
-    // State of ready = false; This is used in user.component.ts so it will wait for codesReady to be true. The user.component will wait for asking the this.codes value until after the GET codes call is finished.
+    // State of ready = false; This is used in user.component.ts so it will wait for codesReady to be true.
+    // The user.component will wait for asking the this.codes value until after the GET codes call is finished.
     this.store.dispatch({ type: 'CODES_NOT_READY' });
 
     // Gets user ID for the GET codes call.
