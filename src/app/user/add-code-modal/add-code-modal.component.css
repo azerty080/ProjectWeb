@@ -13,12 +13,24 @@ form {
   position: relative;
   max-width: 500px;
   min-width: 300px;
-  padding: 10px;
+  padding-bottom: 10px;
   background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.form-header {
+  background-color: #CF0039;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-header h2 {
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 form input[type="text"] {

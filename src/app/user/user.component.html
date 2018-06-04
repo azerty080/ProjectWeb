@@ -21,7 +21,7 @@
       </thead>
       <tbody class="codes">
         <tr *ngFor="let code of codes">
-          <td>{{code.name}}</td>
+          <td (click)="getQuestions(code.keyCode)">{{code.name}}</td>
           <td>{{code.keyCode}}</td>
           <td class="delete-row">
             <span class="fa fa-cog" (click)="openEditingModal(code)"></span>
@@ -45,6 +45,13 @@
     </table>
     <div class="add-code button" *ngIf="page == 'codes'" (click)="openAddingModal()">Code toevoegen</div>
   </div>
+
+  <ngx-charts-pie-chart
+  [view]="500"
+  [results]="view"
+  [legend]="true"
+  [labels]="true">
+  </ngx-charts-pie-chart>
 </main>
 
 <!-- editCode({id:code.id, codeName:code.name, keyCode:code.keyCode}) -->

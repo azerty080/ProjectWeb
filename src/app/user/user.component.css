@@ -97,10 +97,12 @@ main {
 .sidebar a:hover {
   background: #eee;
   color: #0064B4;
+  margin-bottom: -3px;
 }
 .sidebar a.selected {
   font-weight: bold;
   color: #0064B4;
+  margin-bottom: -3px;
 }
 .sidebar a i {
   position: absolute;
