@@ -23,7 +23,7 @@
     align-items: center;
     font-weight: 700;
     min-height: 3rem;
-    width: 10%;
+    width: 100px;
     margin-bottom: .75rem;
     margin-top: 0;
     outline: none;
@@ -136,4 +136,35 @@ input {
   border-top: 1px solid rgba(127,127,127,0.3);
   padding-top: 10px;
   margin-top: 50px;
+}
+
+
+@media only screen and (max-width: 940px) {
+    .login-info {
+      width: 50%;
+      margin-left: 60px;
+    }
+
+    .login-container {
+      flex-direction: column;
+    }
+
+    .login-form {
+      width: 100%;
+      padding: 1.5rem 0 0 0;
+    }
+
+    .login-form p {
+      margin-left: 60px;
+    }
+
+    form {
+      margin-left: 60px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .login-info {
+      width: 70%;
+    }
 }
