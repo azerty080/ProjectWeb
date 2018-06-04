@@ -3,3 +3,10 @@ app-home-body {
 	justify-content: center;
 	align-items: baseline;
 }
+
+@media only screen and (max-width: 940px) {
+	app-home-body {
+		flex-direction: column;
+		align-items: center;
+	}
+}
