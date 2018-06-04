@@ -1,6 +1,10 @@
-<div>
-  <p>Code:</p>
-  <input type="text" [(ngModel)]="code">
-  <div (click)="validate(code)">Ingeven</div>
-  <div (click)="skip()">Overslaan</div>
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="code-modal-container">
+      <h1>Geef hier je code in</h1><br>
+      <input type="text" [(ngModel)]="code" placeholder="Code">
+      <div (click)="validate(code)" class="btn code-modal-submit">Ingeven</div>
+      <div (click)="skip()" class="btn code-modal-submit">Overslaan</div>
+    </div>
+  </div>
 </div>
