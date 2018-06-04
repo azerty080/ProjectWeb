@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="btnContainer">
+    <div class="btn" [ngClass]="questionNumber == 1 ? 'active' : ''" (click)="setQuestion(1)">Question 1</div>
+    <div class="btn" [ngClass]="questionNumber == 2 ? 'active' : ''" (click)="setQuestion(2)">Question 2</div>
+  </div>
+
+  <ngx-charts-pie-chart
+  [view]="500"
+  [results]="results"
+  [legend]="true">
+  </ngx-charts-pie-chart>
+</div>

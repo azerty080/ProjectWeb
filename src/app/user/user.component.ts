@@ -17,10 +17,12 @@ export class UserComponent {
   page: string;
   isAddingCode = false;
   isEditingCode = false;
-  view: any = [{
+  results: any = [{
     "name": "",
     "value": 0
   }];
+  stats: Boolean = false;
+  keyCode: string;
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>, private questionService: QuestionService) {
     store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v.codes; });
@@ -53,12 +55,19 @@ export class UserComponent {
 
   setPage(page) {
     this.store.dispatch({type: 'SET_PAGE', payload: page});
-    console.log(page == 'codes' && this.codes.length > 0);
   }
 
   getQuestions(keyCode) {
+    this.keyCode = keyCode;
     this.questionService.getQuestions(keyCode, 1).subscribe((v) => {
-      this.view = v;
+      this.stats = true;
+      this.results = v;
+    });
+  }
+
+  getQuestion(number) {
+    this.questionService.getQuestions(this.keyCode, number).subscribe((v) => {
+      this.results = v;
     });
   }
 }
