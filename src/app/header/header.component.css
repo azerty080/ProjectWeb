@@ -23,10 +23,26 @@ h1:hover {
 	z-index: -1;
 	width: 100%;
   height: 23.25rem;
+  transition: all 0.5s;
 }
 
 .banner {
   height: 23.25rem;
+  overflow-y: hidden;
+}
+
+.height-zero {
+  animation: hide-img 0.5s linear forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes hide-img {
+  from {
+    height: 23.25rem;
+  }
+  to {
+    height: 0;
+  }
 }
 
 @-moz-document url-prefix() {
@@ -150,6 +166,15 @@ h1:hover {
 
     .background {
       height: 18rem;
+    }
+
+    @keyframes hide-img {
+      from {
+        height: 18rem;
+      }
+      to {
+        height: 0;
+      }
     }
 
     .botnav {
