@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Routes, RouterModule } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { UserComponent } from './user.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
@@ -22,6 +23,7 @@ const USER_ROUTES: Routes = [
     RouterModule.forChild(USER_ROUTES),
     FormsModule,
     ReactiveFormsModule,
+    NgxChartsModule,
   ],
   declarations: [
     UserComponent,

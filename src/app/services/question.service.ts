@@ -16,9 +16,9 @@ export class QuestionService {
 		});
   }
 
-  getQuestions(keyCode) {
+  getQuestions(keyCode, number) {
     const token = localStorage.getItem('token');
-    return this.http.get(`http://localhost:3000/api/question/${keyCode}`, {
+    return this.http.get(`http://localhost:3000/api/question/${keyCode}/${number}`, {
 			headers: new HttpHeaders().set('x-auth-token', `${token}`)
 		});
   }

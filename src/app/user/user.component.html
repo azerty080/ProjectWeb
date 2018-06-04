@@ -45,6 +45,13 @@
     </table>
     <div class="add-code button" *ngIf="page == 'codes'" (click)="openAddingModal()">Code toevoegen</div>
   </div>
+
+  <ngx-charts-pie-chart
+  [view]="500"
+  [results]="view"
+  [legend]="true"
+  [labels]="true">
+  </ngx-charts-pie-chart>
 </main>
 
 <!-- editCode({id:code.id, codeName:code.name, keyCode:code.keyCode}) -->

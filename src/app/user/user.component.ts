@@ -17,6 +17,10 @@ export class UserComponent {
   page: string;
   isAddingCode = false;
   isEditingCode = false;
+  view: any = [{
+    "name": "",
+    "value": 0
+  }];
 
   constructor(private codeService: CodeService, private authService: AuthService, private store: Store<State>, private questionService: QuestionService) {
     store.select('codes').filter((v) => v != null).subscribe((v) => { this.codes = v.codes; });
@@ -53,6 +57,8 @@ export class UserComponent {
   }
 
   getQuestions(keyCode) {
-    this.questionService.getQuestions(keyCode).subscribe((v) => console.log(v));
+    this.questionService.getQuestions(keyCode, 1).subscribe((v) => {
+      this.view = v;
+    });
   }
 }
