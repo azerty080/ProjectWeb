@@ -12,6 +12,7 @@ import { CodeService } from '../services/code.service';
 import { AddCodeModalComponent } from './add-code-modal/add-code-modal.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { EditCodeModalComponent } from './edit-code-modal/edit-code-modal.component';
+import { StatsComponent } from './stats/stats.component';
 
 const USER_ROUTES: Routes = [
 	{ path: '', component: UserComponent }
@@ -30,7 +31,8 @@ const USER_ROUTES: Routes = [
     UserHeaderComponent,
     AddCodeModalComponent,
     UserDetailsComponent,
-    EditCodeModalComponent
+    EditCodeModalComponent,
+    StatsComponent
   ],
   exports: [ UserHeaderComponent ],
   providers: [ CodeService ]
