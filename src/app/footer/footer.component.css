@@ -74,4 +74,8 @@ span {
     .contact {
       margin-right: 0;
     }
+
+    .fa {
+      margin-right: 10px;
+    }
 }

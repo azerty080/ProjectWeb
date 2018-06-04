@@ -3,3 +3,10 @@ app-zelf-doen-body {
 	justify-content: center;
 	align-items: baseline;
 }
+
+@media only screen and (max-width: 940px) {
+	app-zelf-doen-body {
+		flex-direction: column;
+		align-items: center;
+	}
+}
