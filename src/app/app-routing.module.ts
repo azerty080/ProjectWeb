@@ -35,7 +35,7 @@ const appRoutes: Routes = [
       [{path: '', component: GetuigeComponent, outlet: 'content'}] },
   { path: 'wat-kan-je-zelf-doen/als-pleger', component: ZelfDoenComponent, pathMatch: 'full', children:
       [{path: '', component: PlegerComponent, outlet: 'content'}] },
-  { path: 'stellingen', component: StellingenComponent, pathMatch: 'full' },
+  { path: 'feiten', component: StellingenComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
   { path: 'user', loadChildren: './user/user.module#UserModule', canActivate: [AuthGuard] },
   { path: 'game', component: GameComponent, pathMatch: 'full' },
