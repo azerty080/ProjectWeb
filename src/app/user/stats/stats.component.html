@@ -4,9 +4,10 @@
     <div class="btn" [ngClass]="questionNumber == 2 ? 'active' : ''" (click)="setQuestion(2)">Question 2</div>
   </div>
 
-  <ngx-charts-pie-chart
-  [view]="500"
-  [results]="results"
-  [legend]="true">
-  </ngx-charts-pie-chart>
+  <div class="chartContainer">
+	<ngx-charts-pie-chart
+	[results]="results"
+	[legend]="true">
+	</ngx-charts-pie-chart>
+  </div>
 </div>

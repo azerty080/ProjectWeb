@@ -125,3 +125,32 @@ main {
   border-bottom: 3px solid #0064B4;
   padding: 15px;
 }
+
+.feed-container table {
+  width: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .feed-container {
+      width: 60%;
+    }
+
+    .feed-container table {
+      margin-top: 30px;
+    }
+
+    .sidebar {
+      width: 100%;
+      margin-right: 0;
+      align-items: center;
+    }
+
+    .sidebar a {
+      width: 50%;
+    }
+}

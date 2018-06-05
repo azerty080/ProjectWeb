@@ -1,11 +1,11 @@
 <div class="topnav">
   <div>
     <a [routerLink]="['']"><i class="fa fa-home" aria-hidden="true"></i> Home</a><!--
-    --><a (click)="logout()">Logout</a>
+    --><a (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
   </div>
 </div>
 <header>
-  <img src="../../../assets/images/a-logo.svg" alt="a-logo">
+  <img src="../../../assets/images/a-logo.svg" alt="a-logo" class="logo">
   <div class="user-box">
     <h1 class="header-small">Profiel</h1>
     <h2 class="color-red">{{user?.firstname}} {{user?.lastname}}</h2>

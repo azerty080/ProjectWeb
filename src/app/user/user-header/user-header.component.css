@@ -54,6 +54,22 @@ h2 {
   color: #CF0039;
 }
 
-header img {
-  height: 6rem;
+.logo {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 640px) {
+    .topnav a {
+      font-size: 0;
+      padding-top: 31px;
+      padding-bottom: 19px;
+    }
+
+    .topnav i {
+      font-size: 17px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
 }
