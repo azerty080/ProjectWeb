@@ -1,10 +1,9 @@
 #canvas {
-  width: 960px;
-  height: 678px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  width: calc(960px * 0.7);
+  height: calc(678px * 0.7);
+  position: relative;
+  margin: 0 auto;
+  /* transform: translateX(-50%) translateY(-50%); */
   border: 1px solid #000;
   background-size: cover;
   transition: all 0.5s;
@@ -13,8 +12,8 @@
 #mc {
   position: absolute;
   bottom: 0;
-  height: 480px;
-  width: 270px;
+  height: calc(480px * 0.7);
+  width: calc(270px * 0.7);
 }
 
 .center {
@@ -50,7 +49,7 @@
   height: 55px;
   border-radius: 50%;
   background: #db4437;
-  position: fixed;
+  position: absolute;
   bottom: -10px;
   right: -10px;
   z-index: 2;
