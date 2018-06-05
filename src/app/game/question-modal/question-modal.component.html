@@ -1,5 +1,5 @@
 <div class="modal center" [@openModal]="visible">
-  <div *ngFor="let x of question; index as i" (click)="emitValue(x, i)">
+  <div *ngFor="let x of question; index as i" (click)="emitValue(x, i)" class="question">
     {{x}}
   </div>
 </div>

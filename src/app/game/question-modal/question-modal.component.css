@@ -1,9 +1,10 @@
 .modal {
-  height: 75px;
+  min-height: 75px;
   width: 150px;
   background-color: #fff;
   z-index: 2;
   opacity: 0;
+  padding: 10px;
   -webkit-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.75);
@@ -18,4 +19,17 @@
 
 .center {
   transform: translateX(-50%) translateY(-50%);
+}
+
+.question {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.question:hover {
+  color: #4d90fe;
+}
+
+.question:not(:last-child) {
+  border-bottom: 1px solid #000;
 }
