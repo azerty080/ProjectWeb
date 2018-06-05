@@ -5,6 +5,7 @@ import { codes } from './codes.reducer';
 import { userNavigation } from './user-navigation.reducer';
 import { questionModal } from './question-modal.reducer';
 import { questionNumber } from './question-number.reducer';
+import { errorMessage } from './error-message.reducer';
 
 export interface State {
   auth: any,
@@ -12,6 +13,7 @@ export interface State {
   userNavigation: any,
   questionModal: any,
   questionNumber: any,
+  errorMessage: any;
 }
 
 export const reducers: ActionReducerMap<any> = {
@@ -20,4 +22,5 @@ export const reducers: ActionReducerMap<any> = {
   userNavigation,
   questionModal,
   questionNumber,
+  errorMessage
 };

@@ -32,9 +32,9 @@ export class AuthService {
               (err: HttpErrorResponse) => {
                   console.log(err)
                   if (err.status === 404 || err.status === 403) {
-                      console.log('No user found for given credentials.');
+                    this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: "No user found for given credentials." });
                   } else {
-                      console.log(`Oops. That login failed. Please try again.`);
+                    this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: "Oops. That login failed. Please try again." });
                   }
               }
           );

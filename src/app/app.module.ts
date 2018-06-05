@@ -31,6 +31,9 @@ import { GetuigeComponent } from './zelf-doen/zelf-doen-body/getuige/getuige.com
 import { PlegerComponent } from './zelf-doen/zelf-doen-body/pleger/pleger.component';
 import { GameComponent } from './game/game.component';
 import { QuestionModalComponent } from './game/question-modal/question-modal.component';
+import { CodeModalComponent } from './game/code-modal/code-modal.component';
+import { GameDisplayComponent } from './game/game-display/game-display.component';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 // services
 import { AuthService } from './services/auth.service';
@@ -44,8 +47,7 @@ import { codes } from './common/reducers/codes.reducer';
 import { userNavigation} from './common/reducers/user-navigation.reducer';
 import { questionModal } from './common/reducers/question-modal.reducer';
 import { questionNumber } from './common/reducers/question-number.reducer';
-import { CodeModalComponent } from './game/code-modal/code-modal.component';
-import { GameDisplayComponent } from './game/game-display/game-display.component';
+import { errorMessage } from './common/reducers/error-message.reducer';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { GameDisplayComponent } from './game/game-display/game-display.component
     QuestionModalComponent,
     CodeModalComponent,
     GameDisplayComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +89,8 @@ import { GameDisplayComponent } from './game/game-display/game-display.component
         codes: null,
         userNavigation: 'details',
         questionModal: false,
-        questionNumber: 0
+        questionNumber: 0,
+        errorMessage: '',
       }
     }),
     UserModule
