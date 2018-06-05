@@ -32,3 +32,21 @@
 .playground {
   background-image: url('../../../assets/game/playground.jpg');
 }
+
+.game-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 5px;
+  margin: 0;
+}
+
+.next {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 5px;
+}

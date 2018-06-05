@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+.modal-dialog {
+  padding-top: 10px;
+}
+
 .code-modal-container {
   padding: 30px;
   max-width: 300px;
