@@ -1,5 +1,5 @@
 <div id="canvas" class="bedroom" #canvas>
-  <div class="next" (click)="next()">Click</div>
+  <div class="next" (click)="next()"><p class="arrow">></p></div>
   <img src="../../assets/game/mc.png" id="mc" />
   <app-question-modal (sendChoice)="emitChoice($event)"></app-question-modal>
   <p class="game-text">{{text}}</p>
