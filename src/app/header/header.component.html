@@ -4,7 +4,7 @@
  --><a (click)="toggleSearchBar()"><i class="fa fa-search" aria-hidden="true"></i></a><!--
  --><a [routerLink]="['/register']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a><!--
  --><a [routerLink]="['/login']"><i class="fa fa-user" aria-hidden="true"></i> Aanmelden</a>
-	</div>-->
+	</div>
 	<ng-template #isAuth>
     <a [routerLink]="['/user']"><i class="fa fa-user" aria-hidden="true"></i> {{name}}</a><!--
  --><a (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
