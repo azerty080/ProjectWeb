@@ -1,3 +1,9 @@
+h1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 div {
 	width: 45%;
 	margin: 0 75px 20px 75px;
