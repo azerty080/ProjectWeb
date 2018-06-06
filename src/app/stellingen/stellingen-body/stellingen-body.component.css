@@ -3,6 +3,11 @@ div {
 	margin: 0 75px 20px 75px;
 }
 
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 p {
     font-size: 1.25rem;
 }
