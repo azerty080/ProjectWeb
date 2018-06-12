@@ -27,6 +27,9 @@ export class CodeService {
             this.store.dispatch({ type: 'CREATE_CODES', payload: v});
             // Ready state will be set True
             this.store.dispatch({ type: 'CODES_READY' });
+      },
+      (err: HttpErrorResponse) => {
+        this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: err.error });
       });
   }
 
@@ -50,17 +53,19 @@ export class CodeService {
       headers: new HttpHeaders().set('x-auth-token', `${token}`)
     }).subscribe((v: any) => {
       this.deleteCodeInStore(v);
+    }, (err: HttpErrorResponse) => {
+      this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: err.error });
     });
   }
 
   editCode(args: any) {
-    const token = localStorage.getItem('token');
-    // URL needs to be changed + functionality added on API server
-    this.http.put(`http://project.api/code/${args['codeName']}/${args['keyCode']}/${args['id']}`, {
-      headers: new HttpHeaders().set('x-auth-token', `${token}`)
-    }).subscribe((v: any) => {
-      this.editCodeInStore(v);
-    });
+    // const token = localStorage.getItem('token');
+    // // URL needs to be changed + functionality added on API server
+    // this.http.put(`http://project.api/code/${args['codeName']}/${args['keyCode']}/${args['id']}`, {
+    //   headers: new HttpHeaders().set('x-auth-token', `${token}`)
+    // }).subscribe((v: any) => {
+    //   this.editCodeInStore(v);
+    // });
   }
 
   addCodeInStore(code) {

@@ -13,6 +13,7 @@ import { AddCodeModalComponent } from './add-code-modal/add-code-modal.component
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { EditCodeModalComponent } from './edit-code-modal/edit-code-modal.component';
 import { StatsComponent } from './stats/stats.component';
+import { ErrorMessageComponent } from '../error-message/error-message.component';
 
 const USER_ROUTES: Routes = [
 	{ path: '', component: UserComponent }
@@ -32,9 +33,10 @@ const USER_ROUTES: Routes = [
     AddCodeModalComponent,
     UserDetailsComponent,
     EditCodeModalComponent,
-    StatsComponent
+    StatsComponent,
+    ErrorMessageComponent
   ],
-  exports: [ UserHeaderComponent ],
+  exports: [ UserHeaderComponent, ErrorMessageComponent ],
   providers: [ CodeService ]
 })
 export class UserModule { }

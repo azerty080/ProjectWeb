@@ -1,5 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CodeService } from '../../services/code.service';
+import { Store } from '@ngrx/store';
+import { State } from '../../common/reducers';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-code-modal',
@@ -11,7 +15,7 @@ export class CodeModalComponent implements OnInit {
   code: string;
   @Output() sendCode = new EventEmitter();
 
-  constructor(private codeService: CodeService) { }
+  constructor(private codeService: CodeService, private store: Store<State>) { }
 
   ngOnInit() {
   }
@@ -19,6 +23,8 @@ export class CodeModalComponent implements OnInit {
   validate(keyCode) {
     this.codeService.validateCode(keyCode).subscribe((v: any) => {
       if (v) this.sendCode.emit(v);
+    }, (err: HttpErrorResponse) => {
+      this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: err.error });
     });
   }
 

@@ -34,7 +34,6 @@ import { GameComponent } from './game/game.component';
 import { QuestionModalComponent } from './game/question-modal/question-modal.component';
 import { CodeModalComponent } from './game/code-modal/code-modal.component';
 import { GameDisplayComponent } from './game/game-display/game-display.component';
-import { ErrorMessageComponent } from './error-message/error-message.component';
 
 // services
 import { AuthService } from './services/auth.service';
@@ -77,7 +76,6 @@ import { PortalComponent } from './portal/portal.component';
     QuestionModalComponent,
     CodeModalComponent,
     GameDisplayComponent,
-    ErrorMessageComponent,
     PortalComponent,
   ],
   imports: [
