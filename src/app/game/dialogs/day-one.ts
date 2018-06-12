@@ -22,8 +22,6 @@ export const scene2 = [
     by: "narrator" },
   { dialog: "Net buiten de schoolpoort zie je een jongen die tegen de muur wordt geduwd door twee grotere jongens.",
     by: "narrator"},
-  { dialog: "Net buiten de schoolpoort zie je een jongen die tegen de muur wordt geduwd door twee grotere jongens.",
-    by: "narrator"},
   { dialog: "De grotere jongens lachen en lopen weg en de kleinere jongen zit met zijn rug tegen de muur, tranen lopen van zijn wangen.",
     by: "narrator"},
 ];
