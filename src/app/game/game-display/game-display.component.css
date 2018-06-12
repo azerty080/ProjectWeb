@@ -13,11 +13,20 @@
   user-select: none;
 }
 
-#mc {
+#mc, #mom {
   position: absolute;
   bottom: 0;
   height: calc(480px * 0.7);
   width: calc(270px * 0.7);
+  transition: opacity 0.3s;
+}
+
+#mc {
+  right: 0;
+}
+
+#mom {
+  left: 0;
 }
 
 .center {

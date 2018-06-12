@@ -13,6 +13,7 @@ export class GameDisplayComponent implements OnInit {
 
   @Input() code: any = null;
   text: string;
+  talking: string;
   counter: any = 0;
   scene: any = 1;
   canvasElement: any;
@@ -23,6 +24,7 @@ export class GameDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.text = scene1[0].dialog;
+    this.talking = scene1[0].by;
     this.canvasElement = document.getElementById('canvas');
     this.modalElement = document.getElementsByTagName('app-question-modal')[0];
   }
@@ -31,6 +33,7 @@ export class GameDisplayComponent implements OnInit {
     if (this.scene == 1 && this.counter < scene1.length - 1) {
       this.counter = this.counter + 1;
       this.text = scene1[this.counter].dialog;
+      this.talking = scene1[this.counter].by;
       return;
     } else if (this.scene == 1) {
       this.resetCounter();
@@ -44,6 +47,7 @@ export class GameDisplayComponent implements OnInit {
     if (this.scene == 2 && this.counter < scene2.length) {
       this.text = scene2[this.counter].dialog;
       this.counter = this.counter + 1;
+      this.talking = scene2[this.counter].by;
       return;
     } else if (this.scene == 2 && this.counter == scene2.length) {
       this.resetCounter();
@@ -61,6 +65,7 @@ export class GameDisplayComponent implements OnInit {
 
     if (this.scene == 3 && this.counter < scene3.length) {
       this.text = scene3[this.counter].dialog;
+      this.talking = scene3[this.counter].by;
       this.counter = this.counter + 1;
       return;
     } else if (this.scene == 3 && this.counter == scene3.length) {
@@ -72,6 +77,7 @@ export class GameDisplayComponent implements OnInit {
 
     if (this.scene == 3.5 && this.counter < scene3b.length) {
       this.text = scene3b[this.counter].dialog;
+      this.talking = scene3b[this.counter].by;
       this.counter = this.counter + 1;
       return;
     } else if (this.scene == 3.5 && this.counter == scene3b.length) {
@@ -81,6 +87,7 @@ export class GameDisplayComponent implements OnInit {
 
     if (this.scene == 4 && this.counter < scene4.length) {
       this.text = scene4[this.counter].dialog;
+      this.talking = scene4[this.counter].by;
       this.counter = this.counter + 1;
       return;
     }
