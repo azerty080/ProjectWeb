@@ -23,7 +23,7 @@
   left:0;
   top:50%;
   transform:translate(-50%, -50%);
-  margin-left:-0.2em / 2
+  margin-left: calc(-0.2em/2);
 }
 
 .note:before {

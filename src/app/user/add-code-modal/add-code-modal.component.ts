@@ -21,15 +21,15 @@ export class AddCodeModalComponent implements OnInit {
   }
 
   createForm() {
-		this.addCodeForm = this.fb.group({
-			name: [''],
+    this.addCodeForm = this.fb.group({
+      name: [''],
       keyCode: [''],
-		})
+    });
   }
 
   addCode() {
     this.codeService.addCode({name: this.addCodeForm.value.name, keyCode: this.addCodeForm.value.keyCode, id: this.authService.user.id})
-      .subscribe((v) => { this.codeService.addCodeInStore(v); this.closeModal();}
+      .subscribe((v) => { this.codeService.addCodeInStore(v); this.closeModal(); }
     );
   }
 

@@ -15,8 +15,8 @@ import { EditCodeModalComponent } from './edit-code-modal/edit-code-modal.compon
 import { StatsComponent } from './stats/stats.component';
 
 const USER_ROUTES: Routes = [
-	{ path: '', component: UserComponent }
-]
+  { path: '', component: UserComponent }
+];
 
 @NgModule({
   imports: [

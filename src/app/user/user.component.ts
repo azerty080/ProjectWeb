@@ -18,8 +18,8 @@ export class UserComponent {
   isAddingCode = false;
   isEditingCode = false;
   results: any = [{
-    "name": "",
-    "value": 0
+    'name': '',
+    'value': 0
   }];
   stats: Boolean = false;
   keyCode: string;

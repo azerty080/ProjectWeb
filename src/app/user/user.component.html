@@ -2,7 +2,7 @@
 <app-add-code-modal (close)="closeAddingModal()" *ngIf="isAddingCode"></app-add-code-modal>
 <app-edit-code-modal (close)="closeEditingModal()" *ngIf="isEditingCode"></app-edit-code-modal>
 
-<main *ngIf="!stats else showStats">
+<main *ngIf="!stats; else showStats">
   <div class="sidebar" [ngStyle]="{'z-index': isAddingCode ? '-1' : '0'}">
     <a [ngClass]="page == 'details' ? 'active' : ''" (click)="setPage('details')">Gegevens <i class="fa fa-chevron-right"></i></a>
     <a [ngClass]="page == 'codes' ? 'active' : ''" (click)="setPage('codes')">Codes <i class="fa fa-chevron-right"></i></a>
