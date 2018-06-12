@@ -1,18 +1,31 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Input, trigger, state, style, transition, animate } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Store } from '@ngrx/store';
+import { State } from '../common/reducers';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  animations: [
+		trigger('openNavigation',
+			[
+				state('0', style({ transform: 'translateX(-50%) translateY(-50%) scale(0)', opacity: '0' })),
+        state('1', style({ transform: 'translateX(-50%) translateY(-50%) scale(1)', opacity: '1' })),
+			  transition('0 => 1', animate('300ms ease-in')),
+			  transition('1 => 0', animate('300ms ease-out')),
+			]),
+	]
 })
 export class HeaderComponent {
   name: string = 'User';
+  visible: boolean = false;
 
   @ViewChild('searchBar') searchBar: ElementRef;
   @Input() disableImg: Boolean = false;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private store: Store<State>) {
+    store.select('responsiveNagivation').subscribe((v) => this.visible = v );
     this.authService.authObj.subscribe((v) => {
       if (v && v.firstname) {
         this.name = v.firstname;
@@ -35,5 +48,9 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  toggleNav() {
+    this.store.dispatch({ type: 'SET_NAVIGATION' });
   }
 }

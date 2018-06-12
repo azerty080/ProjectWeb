@@ -1,3 +1,9 @@
+<div id="hamburger"[ngClass]="visible ? 'open' : ''" (click)="toggleNav()">
+  <span class="burger-span"></span>
+  <span class="burger-span"></span>
+  <span class="burger-span"></span>
+</div>
+
 <div class="topnav">
 	<div *ngIf="!authService.loggedIn() else isAuth">
     <input type="search" title="search" placeholder="Zoeken... " #searchBar/><!--
@@ -20,7 +26,7 @@
 
 
 
-<div class="botnav">
+<div class="botnav" [ngClass]="visible ? 'show' : ''">
   <a [routerLink]="['/wat-is-seksuele-intimidatie']" routerLinkActive="active">Wat is seksuele intimidatie?</a>
   <a [routerLink]="['/wat-kan-je-zelf-doen']" routerLinkActive="active">Wat kan je zelf doen?</a>
   <a [routerLink]="['/feiten']" routerLinkActive="active">Feiten</a>

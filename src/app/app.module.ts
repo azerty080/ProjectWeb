@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { StoreModule } from '@ngrx/store';
 
@@ -48,6 +49,7 @@ import { userNavigation} from './common/reducers/user-navigation.reducer';
 import { questionModal } from './common/reducers/question-modal.reducer';
 import { questionNumber } from './common/reducers/question-number.reducer';
 import { errorMessage } from './common/reducers/error-message.reducer';
+import { responsiveNagivation } from './common/reducers/responsive-navigation.reducer';
 
 @NgModule({
   declarations: [
@@ -91,11 +93,12 @@ import { errorMessage } from './common/reducers/error-message.reducer';
         questionModal: false,
         questionNumber: 0,
         errorMessage: '',
+        responsiveNagivation: false,
       }
     }),
     UserModule
   ],
-  providers: [AuthService, QuestionService, AuthGuard],
+  providers: [AuthService, QuestionService, AuthGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
