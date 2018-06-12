@@ -37,14 +37,19 @@ div.contentBox:hover p {
   font-size:  5.5vh;
 }
 
-div.contentBox:nth-child(3n+1) {
+a:nth-child(3n+1) div.contentBox {
   background: #CF0039;
 }
 
-div.contentBox:nth-child(3n+2) {
+a:nth-child(3n+2) div.contentBox {
   background: #F18A00;
 }
 
-div.contentBox:nth-child(3n) {
+a:nth-child(3n) div.contentBox {
   background: #0064B4;
+}
+
+#portal a {
+  margin: 0;
+  text-decoration: none;
 }
