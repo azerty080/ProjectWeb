@@ -2,6 +2,8 @@
   <div class="next" (click)="next()"><p class="arrow">></p></div>
   <img src="../../assets/game/mc.png" id="mc" [ngStyle]="{'opacity': talking == 'mc' ? '1' : '0.5'}" />
   <img src="../../assets/game/mother.png" id="mom" *ngIf="scene == 1" [ngStyle]="{'opacity': talking == 'mom' ? '1' : '0.5'}"/>
+  <img src="../../assets/game/bullies.png" id="mom" *ngIf="scene == 2" [ngStyle]="{'opacity': counter == 3 ? '1' : '0.5'}"/>
+  <img src="../../assets/game/jason.png" id="mom" *ngIf="scene == 3  || scene == 3.5" [ngStyle]="{'opacity': talking == 'jason' ? '1' : '0.5'}"/>
   <app-question-modal (sendChoice)="emitChoice($event)"></app-question-modal>
   <p class="game-text">{{text}}</p>
 </div>
