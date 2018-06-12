@@ -23,6 +23,7 @@ export class HeaderComponent {
 
   @ViewChild('searchBar') searchBar: ElementRef;
   @Input() disableImg: Boolean = false;
+  @Input() disableNav: Boolean = false;
 
   constructor(private authService: AuthService, private store: Store<State>) {
     store.select('responsiveNagivation').subscribe((v) => this.visible = v );

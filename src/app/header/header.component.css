@@ -38,6 +38,16 @@ h1:hover {
   animation-delay: 0.1s;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.whitespace {
+  height: 50px;
+  margin-top: 80px;
+  background: white;
+}
+
 @keyframes hide-img {
   from {
     height: 23.25rem;
