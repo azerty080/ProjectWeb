@@ -106,6 +106,7 @@ h1:hover {
   color: #0064B4;
   border-bottom: 3px solid #0064B4;
   padding: 15px;
+  margin: 0 40px;
 }
 
 .topnav input[type='search'] {
@@ -120,6 +121,7 @@ h1:hover {
 }
 
 #hamburger {
+  display: none;
   position: fixed;
   top: 20px;
   left: 20px;
@@ -230,6 +232,10 @@ top: 14px;
 }
 
 @media only screen and (max-width: 736px) {
+  #hamburger {
+    display: block;
+  }
+
   .botnav {
     position: fixed;
     top: 0;
