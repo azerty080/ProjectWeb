@@ -1,6 +1,7 @@
 <div id="canvas" class="bedroom" #canvas>
   <div class="next" (click)="next()"><p class="arrow">></p></div>
-  <img src="../../assets/game/mc.png" id="mc" />
+  <img src="../../assets/game/mc.png" id="mc" [ngStyle]="{'opacity': talking == 'mc' ? '1' : '0.5'}" />
+  <img src="../../assets/game/mother.png" id="mom" *ngIf="scene == 1" [ngStyle]="{'opacity': talking == 'mom' ? '1' : '0.5'}"/>
   <app-question-modal (sendChoice)="emitChoice($event)"></app-question-modal>
   <p class="game-text">{{text}}</p>
 </div>
