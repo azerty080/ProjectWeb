@@ -21,8 +21,8 @@ export class AuthService {
   }
 
     authenticateUser(user): any {
-      let headers = new HttpHeaders();
-      headers.append('Content-Type','application/json');
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json');
 
       this.http.post('https://api20op20.herokuapp.com/api/auth', user)
           .subscribe((v: any) => {
@@ -30,18 +30,27 @@ export class AuthService {
               this.router.navigate(['user']);
           },
               (err: HttpErrorResponse) => {
-                  console.log(err)
+                  console.log(err);
                   if (err.status === 404 || err.status === 403) {
-                    this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: "No user found for given credentials." });
+                    this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'No user found for given credentials.' });
                   } else {
-                    this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: "Oops. That login failed. Please try again." });
+                    this.store.dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Oops. That login failed. Please try again.' });
                   }
               }
           );
     }
 
     auth(res: any) {
-        this.store.dispatch({ type: 'CREATE_AUTH', payload: { id: res.user.id, username: res.user.email, firstname: res.user.firstname, lastname: res.user.lastname, school: res.user.school }});
+        this.store.dispatch({
+          type: 'CREATE_AUTH',
+          payload: {
+            id: res.user.id,
+            username: res.user.email,
+            firstname: res.user.firstname,
+            lastname: res.user.lastname,
+            school: res.user.school
+          }
+        });
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify({ user: res.user.email, id: res.user.id }));
     }
@@ -58,17 +67,17 @@ export class AuthService {
     }
 
     register(user) {
-      let headers = new HttpHeaders();
-      headers.append('Content-Type','application/json');
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json');
 
       this.http.post('https://api20op20.herokuapp.com/api/teacher/', user)
           .subscribe((v: any) => {
-              let res = {user: v.user, token: v.token};
+              const res = {user: v.user, token: v.token};
               this.auth(res);
               this.router.navigate(['user']);
           },
               (err: HttpErrorResponse) => {
-                  console.log(err)
+                  console.log(err);
                   if (err.status === 404 || err.status === 403) {
                       console.log('No user found for given credentials.');
                   } else {

@@ -5,7 +5,7 @@
 </div>
 
 <div class="topnav">
-	<div *ngIf="!authService.loggedIn() else isAuth">
+	<div *ngIf="!authService.loggedIn(); else isAuth">
     <input type="search" title="search" placeholder="Zoeken... " #searchBar/><!--
  --><a (click)="toggleSearchBar()"><i class="fa fa-search" aria-hidden="true"></i></a><!--
  --><a [routerLink]="['/register']"><i class="fa fa-user-plus" aria-hidden="true"></i> Registreren</a><!--
@@ -33,5 +33,3 @@
   <a [routerLink]="['/contact']" routerLinkActive="active" (click)="toggleNav()">Contact</a>
   <a [routerLink]="['/game']" routerLinkActive="active" (click)="toggleNav()">Game</a>
 </div>
-
-<!-- <div class="whiteSpace" [ngClass]="!visiable ? 'whitespace' : ''"> -->

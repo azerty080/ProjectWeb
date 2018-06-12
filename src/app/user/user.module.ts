@@ -16,8 +16,8 @@ import { StatsComponent } from './stats/stats.component';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
 
 const USER_ROUTES: Routes = [
-	{ path: '', component: UserComponent }
-]
+  { path: '', component: UserComponent }
+];
 
 @NgModule({
   imports: [

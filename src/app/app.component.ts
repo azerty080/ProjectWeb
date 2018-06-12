@@ -17,12 +17,21 @@ export class AppComponent {
         headers: new HttpHeaders().set('x-auth-token', `${token}`)
       })
       .subscribe((v: any) => {
-          this.store.dispatch({type: 'CREATE_AUTH', payload: { id: v.user.id, username: v.user.email, firstname: v.user.firstname, lastname: v.user.lastname, school: v.user.school }});
+          this.store.dispatch(
+            {type: 'CREATE_AUTH',
+              payload:
+                { id: v.user.id,
+                  username: v.user.email,
+                  firstname: v.user.firstname,
+                  lastname: v.user.lastname,
+                  school: v.user.school
+                }
+            });
           return true;
       }, (err: HttpErrorResponse) => {
           console.log('something went wrong');
           return false;
-      })
+      });
     }
   }
 }

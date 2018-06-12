@@ -18,13 +18,13 @@ export class RegisterComponent implements OnInit {
   }
 
   createForm() {
-		this.registerForm = this.fb.group({
+    this.registerForm = this.fb.group({
       firstname: [''],
       lastname: [''],
       email: [''],
       school: [''],
-			password: [''],
-		})
+      password: [''],
+    });
   }
 
   register() {

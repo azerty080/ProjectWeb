@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  isReady: boolean = false;
+  isReady = false;
   code: any;
 
   constructor() { }

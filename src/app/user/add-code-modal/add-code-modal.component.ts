@@ -24,10 +24,10 @@ export class AddCodeModalComponent implements OnInit {
   }
 
   createForm() {
-		this.addCodeForm = this.fb.group({
-			name: [''],
+    this.addCodeForm = this.fb.group({
+      name: [''],
       keyCode: [''],
-		})
+    });
   }
 
   addCode() {

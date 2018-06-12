@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
   }
 
   createForm() {
-		this.loginForm = this.fb.group({
-			email: [''],
-			password: [''],
-		})
-	}
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: [''],
+    });
+  }
 
   authenticateUser() {
     this.authService.authenticateUser(this.loginForm.value);

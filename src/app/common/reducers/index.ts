@@ -9,11 +9,11 @@ import { errorMessage } from './error-message.reducer';
 import { responsiveNagivation } from './responsive-navigation.reducer';
 
 export interface State {
-  auth: any,
-  codes: any,
-  userNavigation: any,
-  questionModal: any,
-  questionNumber: any,
+  auth: any;
+  codes: any;
+  userNavigation: any;
+  questionModal: any;
+  questionNumber: any;
   errorMessage: any;
   responsiveNagivation: any;
 }
