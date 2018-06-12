@@ -26,13 +26,10 @@
 
 
 
-<div class="botnav" [ngClass]="disableNav ? 'hidden' : 'show'">
+<div class="botnav" [ngClass]="visible ? 'show' : ''">
   <a [routerLink]="['/wat-is-seksuele-intimidatie']" routerLinkActive="active" (click)="toggleNav()">Wat is seksuele intimidatie?</a>
   <a [routerLink]="['/wat-kan-je-zelf-doen']" routerLinkActive="active" (click)="toggleNav()">Wat kan je zelf doen?</a>
   <a [routerLink]="['/feiten']" routerLinkActive="active" (click)="toggleNav()">Feiten</a>
   <a [routerLink]="['/contact']" routerLinkActive="active" (click)="toggleNav()">Contact</a>
   <a [routerLink]="['/game']" routerLinkActive="active" (click)="toggleNav()">Game</a>
-</div>
-
-<div class="whiteSpace" [ngClass]="disableNav ? 'whitespace' : ''">
 </div>
