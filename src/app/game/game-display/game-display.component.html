@@ -4,6 +4,8 @@
   <img src="../../assets/game/mother.png" id="mom" *ngIf="scene == 1" [ngStyle]="{'opacity': talking == 'mom' ? '1' : '0.5'}"/>
   <img src="../../assets/game/bullies.png" id="mom" *ngIf="scene == 2" [ngStyle]="{'opacity': counter == 3 ? '1' : '0.5'}"/>
   <img src="../../assets/game/jason.png" id="mom" *ngIf="scene == 3  || scene == 3.5" [ngStyle]="{'opacity': talking == 'jason' ? '1' : '0.5'}"/>
+  <img src="../../assets/game/teacher.png" id="teacher" *ngIf="scene == 4 && counter < 6" [ngStyle]="{'opacity': talking == 'teacher' ? '1' : '0.5'}"/>
+  <img src="../../assets/game/naomi.png" id="naomi" *ngIf="scene == 4 && counter > 2" [ngStyle]="{'opacity': talking == 'naomi' ? '1' : '0.5'}"/>
   <app-question-modal (sendChoice)="emitChoice($event)"></app-question-modal>
   <p class="game-text">{{text}}</p>
 </div>

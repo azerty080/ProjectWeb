@@ -70,4 +70,8 @@ export class UserComponent {
       this.results = v;
     });
   }
+
+  closeStats() {
+    this.stats = false;
+  }
 }

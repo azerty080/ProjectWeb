@@ -1,5 +1,6 @@
 <div class="container">
   <div class="btnContainer">
+    <i class="fa fa-arrow-left" (click)="goBack()"></i>
     <div class="btn" [ngClass]="questionNumber == 1 ? 'active' : ''" (click)="setQuestion(1)">Question 1</div>
     <div class="btn" [ngClass]="questionNumber == 2 ? 'active' : ''" (click)="setQuestion(2)">Question 2</div>
   </div>

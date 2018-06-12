@@ -8,6 +8,8 @@
 .btnContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .chartContainer {
@@ -37,4 +39,16 @@
 
 .btn:hover, .btn:focus, .active {
   background-color: #27ae60;
+}
+
+.fa {
+  padding: 20px 20px;
+  font-size: 20px;
+  width: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fa:hover {
+  color: #0064B4;
 }

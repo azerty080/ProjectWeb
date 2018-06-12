@@ -83,12 +83,17 @@ export class GameDisplayComponent implements OnInit {
     } else if (this.scene == 3.5 && this.counter == scene3b.length) {
       this.resetCounter();
       this.scene = 4;
+      this.canvasElement.classList.remove('playground');
     }
 
     if (this.scene == 4 && this.counter < scene4.length) {
       this.text = scene4[this.counter].dialog;
       this.talking = scene4[this.counter].by;
       this.counter = this.counter + 1;
+      return;
+    } else if (this.scene == 4 && this.counter == scene4.length) {
+      this.store.dispatch({ type: 'SET_MODAL', payload: true });
+      this.store.dispatch({ type: 'SET_QUESTION_NUMBER', payload: 2 });
       return;
     }
   }

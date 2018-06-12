@@ -48,7 +48,7 @@
 </main>
 
 <ng-template #showStats>
-  <app-stats [results]="results" (getQuestion)="getQuestion($event)"></app-stats>
+  <app-stats [results]="results" (getQuestion)="getQuestion($event)" (back)="closeStats()"></app-stats>
 </ng-template>
 
 <!-- editCode({id:code.id, codeName:code.name, keyCode:code.keyCode}) -->

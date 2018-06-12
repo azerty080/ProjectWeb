@@ -1,7 +1,7 @@
 export const scene1 = [
   { dialog: "Ugh, het is terug maandag. Waarom moet school zo vroeg beginnen?",
     by: "mc" },
-  { dialog: "NAAM, kom je naar beneden? Ontbijt is klaar en het is bijna tijd voor school.",
+  { dialog: "MC, kom je naar beneden? Ontbijt is klaar en het is bijna tijd voor school.",
     by: "mom" },
   { dialog: "Ben direct beneden, ik moet me nog aankleden.",
     by: "mc" },
@@ -91,9 +91,37 @@ export const scene3b = [
 
 export const scene4 = [
   {
-    dialog: "end",
-    by: "end"
+    dialog: "De les begint terug, maar de leerkracht is nog niet begonnen met de les.",
+    by: "narrator"
+  },
+  {
+    dialog: "Wel we hebben iemand nieuw die in onze klas komt zitten. Dit is Naomi.",
+    by: "teacher"
+  },
+  {
+    dialog: "Naomi loopt de klas binnen, hoofd naar beneden is precies heel verlegen.",
+    by: "narrator"
+  },
+  {
+    dialog: "Hallo, ik ben Naomi.",
+    by: "naomi"
+  },
+  {
+    dialog: "Wel er is plaats naast MC.  Je kan daar zitten.",
+    by: "teacher"
+  },
+  {
+    dialog: "Naomi pakt haar rugzak op en komt naast jou zitten.",
+    by: "narrator"
+  },
+  {
+    dialog: "En hoe zit het in deze klas? Dingen die ik moet weten?",
+    by: "naomi"
   }
+]
+
+export const scene5 = [
+
 ]
 
 

@@ -19,7 +19,7 @@ import { GameComponent } from './game/game.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'portal', pathMatch: 'full' },
+  { path: '', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
   { path: 'wat-is-seksuele-intimidatie', redirectTo: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', pathMatch: 'full' },
   { path: 'wat-is-seksuele-intimidatie/wat-is-seksuele-intimidatie', component: HomeComponent, pathMatch: 'full', children:
       [{path: '', component: SeksueleIntimidatieComponent, outlet: 'content'}] },

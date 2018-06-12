@@ -9,6 +9,7 @@ export class StatsComponent implements AfterViewInit {
 
   @Input() results: any;
   @Output() getQuestion = new EventEmitter();
+  @Output() back = new EventEmitter();
   questionNumber: Number = 1;
 
   constructor() { }
@@ -19,5 +20,9 @@ export class StatsComponent implements AfterViewInit {
   setQuestion(question) {
     this.getQuestion.emit(question);
     this.questionNumber = question;
+  }
+
+  goBack() {
+    this.back.emit();
   }
 }
