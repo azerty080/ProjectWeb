@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { PortalComponent } from './portal/portal.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
   { path: 'user', loadChildren: './user/user.module#UserModule', canActivate: [AuthGuard] },
   { path: 'game', component: GameComponent, pathMatch: 'full' },
+  { path: 'portal', component: PortalComponent, pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -1,0 +1,50 @@
+#portal {
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
+div.contentBox {
+  min-height: 20vh;
+  display: grid;
+  grid-template-columns: .5fr 3fr 1fr .5fr;
+  grid-template-areas: " . text arrows .";
+  grid-column-gap: 1vw;
+  align-items: center;
+  color: white;
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+div.contentBox p {
+  grid-area: text;
+  text-align: right;
+  transition: font-size .1s ease-in-out;
+  font-size: 5vh;
+}
+
+div.contentBox:after {
+  content: ">>";
+  grid-area: arrows;
+  justify-self: left;
+  transition: margin-left .1s ease-in-out;
+}
+
+div.contentBox:hover:after {
+  margin-left: 2vw;
+}
+
+div.contentBox:hover p {
+  font-size:  5.5vh;
+}
+
+div.contentBox:nth-child(3n+1) {
+  background: #CF0039;
+}
+
+div.contentBox:nth-child(3n+2) {
+  background: #F18A00;
+}
+
+div.contentBox:nth-child(3n) {
+  background: #0064B4;
+}

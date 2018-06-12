@@ -50,6 +50,7 @@ import { questionModal } from './common/reducers/question-modal.reducer';
 import { questionNumber } from './common/reducers/question-number.reducer';
 import { errorMessage } from './common/reducers/error-message.reducer';
 import { responsiveNagivation } from './common/reducers/responsive-navigation.reducer';
+import { PortalComponent } from './portal/portal.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { responsiveNagivation } from './common/reducers/responsive-navigation.re
     CodeModalComponent,
     GameDisplayComponent,
     ErrorMessageComponent,
+    PortalComponent,
   ],
   imports: [
     BrowserModule,
