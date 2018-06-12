@@ -13,9 +13,7 @@ h1:hover {
 }
 
 .background {
-  background-image: url('../../assets/images/banner.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../../assets/images/banner.jpg') center no-repeat;
   background-size: cover;
 	position: absolute;
   top: 2.85em;
@@ -29,6 +27,10 @@ h1:hover {
 .banner {
   height: 23.25rem;
   overflow-y: hidden;
+}
+
+.banner a {
+  text-decoration: none;
 }
 
 .height-zero {
@@ -158,7 +160,7 @@ h1:hover {
 }
 
 #hamburger span:nth-child(1) {
-top: 0px;
+top: 0;
 -webkit-transform-origin: left center;
 -moz-transform-origin: left center;
 -o-transform-origin: left center;
@@ -190,7 +192,7 @@ top: -3px;
 }
 
 #hamburger.open span:nth-child(2) {
-width: 0%;
+width: 0;
 opacity: 0;
 }
 
