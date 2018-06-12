@@ -45,7 +45,6 @@ th {
   color: white;
   font-weight: bold;
   background: #0064B4;
-  cursor: pointer;
   padding: 15px;
   display: block !important;
   margin: 10px -5px 10px 0;
@@ -59,7 +58,6 @@ th {
 
 .fa-times {
   color: #CF0039;
-  cursor: pointer;
 }
 
 .fa-cog {
@@ -128,6 +126,10 @@ main {
 
 .feed-container table {
   width: 100%;
+}
+
+.fa {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 640px) {
