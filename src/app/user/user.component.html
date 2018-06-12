@@ -24,6 +24,7 @@
           <td (click)="getQuestions(code.keyCode)">{{code.name}}</td>
           <td>{{code.keyCode}}</td>
           <td class="delete-row">
+            <span class="fa fa-eye" (click)="getQuestions(code.keyCode)"></span>
             <span class="fa fa-cog" (click)="openEditingModal(code)"></span>
             <span class="fa fa-times" (click)="deleteCode(code._id)"></span>
           </td>
