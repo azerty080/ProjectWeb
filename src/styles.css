@@ -140,13 +140,13 @@ iframe {
   height: 100%;
   border-style: none;
 }
-.left {
+.subnav {
   display: flex;
   flex-flow: column;
   margin-right: 20px;
 }
 
-.left a {
+.subnav a {
   width: 300px;
   border-top: 1px solid rgba(127,127,127,0.3);
   margin: 0;
@@ -156,30 +156,30 @@ iframe {
   color: inherit;
   text-decoration: inherit;
 }
-.left a.active{
+.subnav a.active{
   color: #0064B4;
   font-weight: bold;
 }
-.left a:last-child {
+.subnav a:last-child {
   border-bottom: 1px solid rgba(127,127,127,0.3);
 }
-.left a:hover {
+.subnav a:hover {
   background: #eee;
   color: #003c6c;
 
 }
-.left a.selected {
+.subnav a.selected {
   font-weight: bold;
   color: #0064B4;
 }
-.left a i {
+.subnav a i {
   position: absolute;
   right: 10px;
   font-size: .8rem;
   margin: .1rem 0;
   transition: font-size .2s ease-in-out, margin .2s ease-in-out;
 }
-.left a:hover i {
+.subnav a:hover i {
   font-size: 1rem;
   margin: 0 3px;
 }
@@ -215,14 +215,21 @@ h2 {
     	font-size: 2.5rem;
     }
 
-    .left {
+    .subnav {
     	width: 55%;
     	margin: 20px 0 10px 0;
     }
 
-    .left a {
+    .subnav a {
     	width: 90%;
     }
+}
+
+@media only screen and (max-width: 736px) {
+  .subnav {
+    margin-top: 80px;
+  }
+
 }
 
 
@@ -240,8 +247,9 @@ h2 {
 
 
 @media only screen and (max-width: 640px) {
-	.left {
-		width: 80%;
+	.subnav {
+    width: 80%;
+    margin-top: 0;
 	}
 
     .right {
